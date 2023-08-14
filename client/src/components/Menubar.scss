@@ -1,0 +1,74 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+
+.menubar {
+  border: 1px solid variables.$color-gray-3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.5rem;
+
+  &__item {
+    width: 23.706rem;
+    height: 7.302rem;
+    // border: 1px solid #000;
+    padding: 2px 10px;
+    @include mixins.flexCenter;
+    font-size: variables.$default-font-size;
+    position: relative;
+
+    &-dropdown {
+      &:hover + #popup-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.2s;
+      }
+    }
+
+    &-slider {
+      &:hover + #popup-slider {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+}
+
+#popup-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  color: variables.$color-gray-8;
+  font-size: variables.$default-font-size-small-2;
+  position: absolute;
+  width: 28rem;
+  height: 8.5rem;
+  top: 0rem;
+  left: -26rem;
+  background-color: variables.$color-white;
+  border: 0.5px solid variables.$color-gray-3;
+  box-shadow: 5px 5px 10px variables.$color-gray-3;
+  padding: 10px 15px;
+  border-radius: 2px;
+  z-index: 9999;
+}
+
+#popup-slider {
+  opacity: 0;
+  visibility: hidden;
+  color: variables.$color-gray-8;
+  font-size: variables.$default-font-size-small-2;
+  position: absolute;
+  width: 28rem;
+  height: 10.5rem;
+  top: 0rem;
+  left: -26rem;
+  background-color: variables.$color-white;
+  border: 0.5px solid variables.$color-gray-3;
+  box-shadow: 5px 5px 10px variables.$color-gray-3;
+  padding: 10px 15px;
+  border-radius: 2px;
+  z-index: 9999;
+}

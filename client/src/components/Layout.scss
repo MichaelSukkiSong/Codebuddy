@@ -1,0 +1,8 @@
+.layout {
+  position: relative;
+  overflow: hidden;
+
+  & main {
+    overflow: hidden;
+  }
+}

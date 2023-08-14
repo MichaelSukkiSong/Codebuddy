@@ -1,0 +1,79 @@
+@use '../styles/variables';
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px variables.$color-gray-5;
+  transition: 0.1s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 10px variables.$color-gray-5;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 5px 5px 10px variables.$color-gray-5;
+  }
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.outlined {
+  background-color: variables.$color-white !important;
+  color: variables.$color-black !important;
+}
+
+.primary {
+  background-color: variables.$color-primary-6;
+  color: variables.$color-white;
+  border: 1px solid variables.$color-primary-6;
+
+  &:hover {
+    background-color: variables.$color-primary-7;
+    border: 1px solid variables.$color-primary-7;
+  }
+}
+
+.secondary {
+  background-color: variables.$color-primary-0;
+  color: variables.$color-primary-8;
+  border: 1px solid variables.$color-primary-0;
+
+  &:hover {
+    background-color: variables.$color-primary-1;
+    border: 1px solid variables.$color-primary-1;
+  }
+}
+
+.success {
+  background-color: variables.$color-success;
+  color: variables.$color-white;
+  border: 1px solid variables.$color-success;
+
+  &:hover {
+    background-color: variables.$color-success-hover;
+    border: 1px solid variables.$color-success-hover;
+  }
+}
+
+.danger {
+  background-color: variables.$color-danger;
+  color: variables.$color-white;
+  border: 1px solid variables.$color-danger;
+}
+
+.warning {
+  background-color: variables.$color-warning;
+  color: variables.$color-white;
+  border: 1px solid variables.$color-warning;
+}
+
+.info {
+  background-color: variables.$color-info;
+  color: variables.$color-white;
+  border: 1px solid variables.$color-info;
+}

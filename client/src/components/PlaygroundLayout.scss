@@ -1,0 +1,201 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+
+.playground {
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  // background-color: cornflowerblue;
+
+  &__sidebar {
+    width: 20%;
+  }
+
+  &__outlet {
+    width: 80%;
+  }
+}
+
+.pg {
+  &-section {
+    width: 100%;
+    height: 100%;
+
+    &__content {
+      height: 75%;
+      width: 100%;
+      // background-color: chartreuse;
+      display: flex;
+
+      &--input {
+        width: 47%;
+        // background-color: red;
+        overflow-y: scroll;
+      }
+
+      &--arrow {
+        width: 6%;
+        // background-color: orange;
+        display: flex;
+        align-items: center;
+      }
+
+      &--output {
+        width: 47%;
+        // background-color: cadetblue;
+
+        &-code {
+          height: 65%;
+          @include mixins.flexCenter;
+        }
+
+        &-text {
+          height: 35%;
+          @include mixins.flexCenter;
+        }
+      }
+    }
+
+    &__footer {
+      height: 10%;
+      // background-color: antiquewhite;
+      display: flex;
+
+      &-left {
+        // background-color: darkorchid;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 7rem;
+        padding-bottom: 1rem;
+      }
+
+      &-right {
+        // background-color: yellowgreen;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 3.5rem;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  &-message {
+    // background-color: chartreuse;
+    border-bottom: 1px solid variables.$color-gray-5;
+    padding: 3px;
+    display: flex;
+
+    &:hover textarea {
+      background-color: variables.$color-gray-0;
+    }
+
+    &:hover {
+      background-color: variables.$color-gray-0;
+      cursor: pointer;
+    }
+
+    &:hover &__delete-icon {
+      color: variables.$color-gray-5;
+    }
+
+    &:hover &__type-text {
+      background-color: variables.$color-gray-3;
+    }
+
+    &__box {
+      width: 100%;
+    }
+
+    &__type {
+      width: 15%;
+      // background-color: cadetblue;
+      @include mixins.flexCenter;
+      font-size: variables.$default-font-size;
+      font-weight: 800;
+
+      &-text {
+        padding: 5px 10px;
+      }
+    }
+
+    &__input {
+      width: 75%;
+      @include mixins.flexCenter;
+
+      & textarea {
+        background-color: variables.$color-white;
+        border: none;
+
+        &::placeholder {
+          font-size: variables.$default-font-size;
+          color: variables.$color-gray-4;
+        }
+      }
+
+      & textarea:focus {
+        border: 1px solid variables.$color-primary-5;
+        border-radius: 5px;
+        background-color: variables.$color-white;
+      }
+    }
+
+    &__delete {
+      width: 10%;
+      // background-color: deepskyblue;
+      @include mixins.flexCenter;
+
+      &-icon {
+        font-size: 1.8rem;
+        color: variables.$color-white;
+
+        &:hover {
+          color: variables.$color-gray-8 !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__add {
+      height: 5rem;
+      // background-color: gold;
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:hover {
+        background-color: variables.$color-gray-0;
+        cursor: pointer;
+      }
+
+      &-icon {
+        font-size: 1.8rem;
+        padding: 0 15px;
+        @include mixins.flexCenter;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px auto;
+
+  &:focus {
+    outline: none;
+  }
+}

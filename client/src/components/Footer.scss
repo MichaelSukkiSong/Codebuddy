@@ -1,0 +1,35 @@
+@use '../styles/typography';
+@use '../styles/mixins';
+@use '../styles/variables';
+
+.footer {
+  background-color: variables.$color-white;
+  height: 15vh;
+  padding: 2rem 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid variables.$color-gray-3;
+
+  &__headerbox {
+    @include mixins.flexCenter;
+    margin-bottom: 1rem;
+  }
+
+  &__infobox {
+    display: flex;
+  }
+
+  &__infolist {
+    list-style: none;
+    justify-content: flex-start;
+    display: flex;
+  }
+
+  &__infoitem {
+    margin-top: 1rem;
+    margin-right: 2rem;
+  }
+
+  &__infolink {
+    text-decoration: none;
+  }
+}

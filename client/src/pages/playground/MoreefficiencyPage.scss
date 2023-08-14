@@ -1,0 +1,16 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.pg-me {
+  &-section {
+    width: 100%;
+    height: 100%;
+
+    &__menubar {
+      height: 15%;
+      width: 100%;
+      // background-color: aqua;
+      padding: 1rem 2rem 2rem 2rem;
+    }
+  }
+}

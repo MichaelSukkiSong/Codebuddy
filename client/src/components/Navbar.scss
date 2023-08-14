@@ -1,0 +1,63 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+
+.nav {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid variables.$color-gray-3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: variables.$color-white;
+  // background-color: coral;
+
+  &__logobox {
+    height: 100%;
+    width: 5%;
+    @include mixins.flexCenter;
+  }
+
+  &__link-box {
+    height: 100%;
+    width: 35%;
+    @include mixins.flexCenter;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 2rem;
+
+    & a.active {
+      color: variables.$color-primary-6;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: variables.$default-font-size-small-1;
+    font-weight: 400;
+    color: variables.$color-gray-6;
+
+    &:hover {
+      color: variables.$color-gray-7;
+    }
+
+    &-icon {
+      @include mixins.flexCenter;
+      text-decoration: none;
+      color: variables.$color-gray-6;
+
+      &:hover {
+        color: variables.$color-gray-7;
+      }
+    }
+  }
+}

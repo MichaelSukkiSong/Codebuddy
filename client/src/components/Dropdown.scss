@@ -1,0 +1,79 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+
+.dropdown {
+  border: 1px solid variables.$color-gray-5;
+  border-radius: 5px;
+  height: 3rem;
+  width: 18rem;
+  font-size: variables.$default-font-size;
+  position: relative;
+  cursor: pointer;
+
+  &__name {
+    font-size: 15px;
+    color: variables.$color-gray-8;
+    padding-bottom: 5px;
+  }
+
+  &__menu {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+  }
+
+  &__label {
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+  }
+
+  &__icon {
+    width: 25%;
+    @include mixins.flexCenter;
+  }
+
+  &__content {
+    background-color: variables.$color-white;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    width: 16rem;
+    border-left: 1px solid variables.$color-gray-2;
+    border-right: 1px solid variables.$color-gray-2;
+    box-shadow: 1px 1px 5px variables.$color-gray-3;
+    border-radius: 5px;
+
+    &__item {
+      padding: 6px 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: variables.$color-primary-0;
+      }
+    }
+  }
+}
+
+.open {
+  &__content {
+    border-bottom: 1px solid variables.$color-gray-2;
+    border-top: 1px solid variables.$color-gray-2;
+  }
+
+  &__menu {
+    border: 1px solid variables.$color-primary-6;
+    border-radius: 5px;
+  }
+
+  &__dropdown {
+    border: none;
+  }
+}
+
+.selected {
+  background-color: variables.$color-primary-7 !important;
+  color: variables.$color-white !important;
+}

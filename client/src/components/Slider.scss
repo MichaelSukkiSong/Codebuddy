@@ -1,0 +1,55 @@
+@use '../styles/variables';
+@use '../styles/mixins';
+
+.slider {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-name {
+    }
+
+    &-input {
+      width: 5rem;
+      height: 2.5rem;
+      border: none;
+      border-radius: 5px;
+      direction: rtl;
+      margin-top: 4px;
+
+      &:hover {
+        border: 1px solid variables.$color-gray-3;
+      }
+      &:focus {
+        outline: 1px solid variables.$color-primary-6;
+      }
+    }
+  }
+
+  &__main {
+    height: 3rem;
+    width: 18rem;
+    @include mixins.flexCenter;
+  }
+}
+
+// CSS UNABLE TO OUTLINE: NONE
+// USED JS IN Slider.js TO ACCOMPLISH OUTLINE:NONE
+.rc-slider-handle {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+
+    &:focus:active {
+      outline: none !important;
+
+      border: 2px solid variables.$color-gray-8 !important;
+    }
+  }
+
+  &:hover {
+    outline: none !important;
+    border: 2px solid variables.$color-gray-6 !important;
+  }
+}

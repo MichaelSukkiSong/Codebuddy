@@ -1,0 +1,91 @@
+@use '../../styles/variables';
+
+#arrowAnim {
+  position: relative;
+  // background-color: burlywood;
+}
+
+.arrow {
+  width: 5rem;
+  height: 5rem;
+  border: 2.5rem solid;
+  // background-color: cornflowerblue;
+  border-color: transparent variables.$color-primary-6
+    variables.$color-primary-6 transparent;
+  transform: rotate(-45deg);
+  animation-name: arrowDirection;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+
+  &-small {
+    width: 2.5rem;
+    height: 2.5rem;
+    // background-color: aqua;
+    border: 1.25rem solid;
+    border-color: transparent variables.$color-primary-6
+      variables.$color-primary-6 transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    animation-name: arrowDirectionSmall;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes arrowDirection {
+  0% {
+    border: 2.5rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  25% {
+    border: 1.875rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  50% {
+    border: 1.25rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  75% {
+    border: 0.625rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  100% {
+    border: 0rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+}
+
+@keyframes arrowDirectionSmall {
+  0% {
+    border: 1.25rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  25% {
+    border: 0.9375rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  50% {
+    border: 0.625rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  75% {
+    border: 0.3125rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+  100% {
+    border: 0rem solid;
+    border-color: transparent variables.$color-primary-7
+      variables.$color-primary-7 transparent;
+  }
+}

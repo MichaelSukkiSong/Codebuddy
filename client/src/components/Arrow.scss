@@ -1,0 +1,10 @@
+@use '../styles/variables';
+
+.arrowNoAnimation {
+  width: 5rem;
+  height: 5rem;
+  border: 2.5rem solid;
+  border-color: transparent variables.$color-primary-0
+    variables.$color-primary-0 transparent;
+  transform: rotate(-45deg);
+}

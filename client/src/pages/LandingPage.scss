@@ -1,0 +1,68 @@
+@use '../styles/variables';
+@use '../styles/mixins';
+
+.header {
+  background-image: url(https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80);
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  color: variables.$color-white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.typewriter {
+  display: flex;
+  width: 100%;
+  padding: 0 5rem;
+  @include mixins.flexCenter;
+
+  &__box {
+    width: 35rem;
+    height: 20rem;
+  }
+
+  &__heading-box {
+    @include mixins.flexCenter;
+    background-color: variables.$color-gray-7;
+    color: variables.$color-gray-3;
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid variables.$color-gray-6;
+    }
+  }
+
+  &__heading {
+  }
+
+  &__editor {
+    @include mixins.flexCenter;
+    background-color: variables.$color-black;
+    height: 85%;
+    width: 100%;
+    color: variables.$color-gray-3;
+    padding: 0.5rem 0.5rem;
+    resize: none;
+    outline: none;
+
+    &-input {
+    }
+
+    &-output {
+    }
+  }
+}
