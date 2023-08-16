@@ -60,4 +60,16 @@
       }
     }
   }
+
+  &__input {
+    border: none;
+    color: variables.$color-gray-6;
+    font-size: variables.$default-font-size-small-1;
+    background-color: variables.$color-white;
+    cursor: pointer;
+
+    &:hover {
+      color: variables.$color-gray-7;
+    }
+  }
 }

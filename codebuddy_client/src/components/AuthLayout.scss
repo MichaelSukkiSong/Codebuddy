@@ -1,0 +1,212 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+@use '../styles/utilities';
+
+.auth {
+  overflow: hidden;
+
+  &__header {
+    width: 100%;
+    // background-color: aqua;
+    height: 6rem;
+
+    @include mixins.flexCenter;
+
+    &-logo {
+      @include mixins.flexCenter;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    // background-color: darkseagreen;
+    height: 65rem;
+    @include mixins.flexCenter;
+
+    &-box {
+      // background-color: greenyellow;
+      width: 30rem;
+      height: 56rem;
+    }
+
+    &-header {
+      // background-color: coral;
+      height: 14rem;
+
+      &--title {
+        font-size: variables.$default-font-size-3;
+      }
+
+      &--notice {
+        font-size: variables.$default-font-size-small-2;
+      }
+
+      &-noticebox {
+        padding: 10px 20px;
+      }
+    }
+
+    &-content {
+      // background-color: darkolivegreen;
+      height: 42rem;
+    }
+  }
+
+  &__form {
+    // background-color: chartreuse;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-box {
+      // background-color: aquamarine;
+      height: 19rem;
+      @include mixins.flexCenter;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 5rem;
+    border: 1px solid variables.$color-gray-4;
+    border-radius: 3px;
+    padding-left: 20px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid variables.$color-success;
+    }
+
+    &::placeholder {
+      color: variables.$color-gray-5;
+      font-size: variables.$default-font-size;
+    }
+
+    &-box {
+      background-color: antiquewhite;
+      width: 100%;
+      @include mixins.flexCenter;
+      margin-bottom: 1rem;
+    }
+
+    &-btn {
+      // background-color: darkmagenta;
+      width: 100%;
+
+      & button {
+        width: 100%;
+        height: 5rem;
+        background-color: variables.$color-success;
+        color: variables.$color-gray-0;
+        border: none;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: variables.$color-success-hover;
+        }
+      }
+    }
+  }
+
+  &__tologin {
+    // background-color: blueviolet;
+    height: 5rem;
+    @include mixins.flexCenter;
+    font-size: variables.$default-font-size-small-1;
+
+    & > p > a {
+      color: variables.$color-success;
+      text-decoration: none;
+    }
+  }
+
+  &__divider {
+    // background-color: cornflowerblue;
+    height: 3rem;
+    @include mixins.flexCenter;
+
+    & > span::before {
+      content: '';
+      display: inline-block;
+      border-bottom: 1px solid variables.$color-gray-4;
+      height: 0.5rem;
+      width: 12rem;
+      // background-color: aqua;
+      margin-right: 5px;
+      margin-bottom: 2px;
+    }
+    & > span::after {
+      content: '';
+      display: inline-block;
+      border-bottom: 1px solid variables.$color-gray-4;
+      height: 0.5rem;
+      width: 12rem;
+      // background-color: aqua;
+      margin-left: 5px;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__oauth {
+    // background-color: grey;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &--form {
+      // background-color: aqua;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--google {
+      width: 100%;
+      // background-color: bisque;
+      margin: 5px auto;
+
+      &-link {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: variables.$color-gray-7;
+        font-size: variables.$default-font-size-small-1;
+        width: 100%;
+        border: 1px solid variables.$color-gray-5;
+        padding: 12px 22px;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: variables.$color-gray-1;
+        }
+      }
+
+      &-btn {
+      }
+
+      &-icon {
+        font-size: 20px;
+        display: flex;
+      }
+
+      & > button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border: 1px solid variables.$color-gray-4;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    // background-color: crimson;
+    height: 6rem;
+  }
+}

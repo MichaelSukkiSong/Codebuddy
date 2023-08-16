@@ -15,7 +15,7 @@ const Button = ({
   outlined,
   ...rest
 }) => {
-  const classNames = classnames(className, {
+  const classNames = classnames(className, 'button', {
     primary,
     secondary,
     success,

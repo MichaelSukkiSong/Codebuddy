@@ -3,7 +3,7 @@ import { SiSemanticuireact } from 'react-icons/si';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ currentUser }) => {
-  console.log('current user is: ', currentUser);
+  // console.log('(from navbar) current user is : ', currentUser);
 
   return (
     <nav className="nav">
@@ -26,13 +26,20 @@ const Navbar = ({ currentUser }) => {
           </li>
           <li className="nav__item">
             {currentUser ? (
-              <form method="post" action="/api/logout" className="nav__link">
-                <input type="submit" value="Logout" />
+              <form method="post" action="/api/logout">
+                <input type="submit" value="Logout" className="nav__input" />
               </form>
             ) : (
-              <a href="/auth/google" className="nav__link">
-                Continue with Google
-              </a>
+              <NavLink to="/auth/login" className="nav__link">
+                Log in
+              </NavLink>
+            )}
+          </li>
+          <li className="nav__item">
+            {currentUser ? null : (
+              <NavLink to="/auth/signup" className="nav__link">
+                Sign up
+              </NavLink>
             )}
           </li>
         </ul>

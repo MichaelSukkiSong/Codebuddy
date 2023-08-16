@@ -1,0 +1,29 @@
+@use '../styles/mixins';
+@use '../styles/variables';
+@use '../styles/utilities';
+
+.login {
+  &__main {
+    &-header {
+      // background-color: coral;
+      height: 14rem;
+
+      &--title {
+        font-size: variables.$default-font-size-3;
+      }
+
+      &--notice {
+        font-size: variables.$default-font-size-small-2;
+      }
+
+      &-noticebox {
+        padding: 10px 20px;
+      }
+
+      &-message {
+        color: red;
+        font-size: variables.$default-font-size-2;
+      }
+    }
+  }
+}
