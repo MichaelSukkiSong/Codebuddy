@@ -31,9 +31,9 @@ module.exports = (app) => {
         temperature
       );
 
-      console.log(chatCompletion.data.choices[0].message);
+      // console.log(chatCompletion.data.choices[0].message);
 
-      res.status(200).json({ result: chatCompletion.data.choices[0].message });
+      res.status(200).json({ results: chatCompletion.data, section });
     } catch (error) {
       if (error.response) {
         console.error(error.response.status, error.response.data);

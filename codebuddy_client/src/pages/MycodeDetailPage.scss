@@ -1,0 +1,112 @@
+@use '../styles/variables';
+@use '../styles/mixins';
+
+.mycodeDetail {
+  &__header {
+    // background-color: gold;
+    height: 10vh;
+  }
+
+  &__main {
+    height: 80vh;
+    // background-color: greenyellow;
+    @include mixins.flexCenter;
+
+    &-box {
+      // background-color: cornflowerblue;
+      width: 65%;
+      height: 95%;
+      overflow-y: scroll;
+    }
+  }
+
+  &__footer {
+    height: 10vh;
+    // background-color: blanchedalmond;
+  }
+
+  &__category {
+    // background-color: antiquewhite;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    font-size: variables.$default-font-size;
+    margin-bottom: 2rem;
+
+    & > input {
+      margin-left: 2rem;
+      height: 4rem;
+      width: 52.5rem;
+      padding-left: 5px;
+    }
+  }
+
+  &__meta {
+    // background-color: hotpink;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5rem;
+    height: 8%;
+    font-size: variables.$default-font-size;
+    padding-left: 1.6rem;
+  }
+
+  &__owner {
+    // background-color: cornflowerblue;
+
+    & > input {
+      margin-left: 2rem;
+      height: 4rem;
+      width: 20rem;
+      padding-left: 5px;
+    }
+  }
+
+  &__created {
+    // background-color: lightblue;
+
+    & > input {
+      margin-left: 2rem;
+      height: 4rem;
+      width: 20rem;
+      padding-left: 5px;
+    }
+  }
+
+  &__content {
+    // background-color: cadetblue;
+    height: 100%;
+
+    @include mixins.flexCenter;
+  }
+
+  &__btn {
+    border: 1px solid variables.$color-gray-6;
+    height: 5rem;
+    width: 15rem;
+    border-radius: 30px;
+    // padding: 10px 20px;
+    font-size: variables.$default-font-size;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding-left: 10px;
+    margin-bottom: 3rem;
+
+    &--link {
+      text-decoration: none;
+      color: variables.$color-gray-6;
+    }
+
+    &--text {
+      padding-bottom: 2px;
+    }
+
+    &:hover {
+      background-color: variables.$color-gray-1;
+    }
+  }
+}

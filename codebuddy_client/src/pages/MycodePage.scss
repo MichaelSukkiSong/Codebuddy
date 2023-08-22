@@ -1,0 +1,172 @@
+@use '../styles/variables';
+@use '../styles/mixins';
+
+.mycode {
+  &__link {
+    text-decoration: none;
+    color: variables.$color-gray-6;
+    display: flex;
+    // background-color: aquamarine;
+    width: 100%;
+  }
+  &__header {
+    // background-color: gold;
+    height: 10vh;
+  }
+
+  &__main {
+    height: 90vh;
+    // background-color: greenyellow;
+
+    @include mixins.flexCenter;
+  }
+
+  &__response {
+    // background-color: darkgray;
+    height: 8%;
+    display: flex;
+    border-bottom: 1px solid variables.$color-gray-4;
+
+    &:hover {
+      background-color: variables.$color-gray-1;
+    }
+
+    &-box {
+      // background-color: cornflowerblue;
+      width: 65%;
+      height: 95%;
+      overflow-y: scroll;
+
+      &-menu {
+        // background-color: aqua;
+        display: flex;
+        gap: 50px;
+        padding: 3rem 0px;
+
+        &--dropdown {
+        }
+
+        &--searchbar {
+          // background-color: burlywood;
+          @include mixins.flexCenter;
+          height: 4rem;
+          width: 36rem;
+          margin-top: 25px;
+          gap: 10px;
+          padding: 5px 15px;
+          align-self: flex-end;
+          border-radius: 20px;
+          flex-direction: row-reverse;
+          border: 1px solid variables.$color-gray-4;
+
+          &:hover {
+            box-shadow: 3px 3px 10px variables.$color-gray-3;
+          }
+
+          &-icon {
+            font-size: variables.$default-font-size;
+            @include mixins.flexCenter;
+          }
+
+          &-input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding-left: 5px;
+            border: none;
+          }
+        }
+      }
+
+      &-label {
+        // background-color: aquamarine;
+        height: 7%;
+        display: flex;
+        font-size: variables.$default-font-size-small-1;
+        border-bottom: 1px solid variables.$color-gray-4;
+
+        &-category {
+          width: 25%;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+        }
+        &-content {
+          width: 40%;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+        }
+        &-owner {
+          width: 15%;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+        }
+        &-created {
+          width: 15%;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    &--category {
+      // background-color: darksalmon;
+      width: 25%;
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &-icon {
+        font-size: 25px;
+        padding: 20px;
+        @include mixins.flexCenter;
+      }
+    }
+    &--content {
+      // background-color: darkviolet;
+      width: 42%;
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10px;
+    }
+    &--owner {
+      // background-color: darkolivegreen;
+      width: 15%;
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10px;
+    }
+    &--created {
+      // background-color: midnightblue;
+      width: 15%;
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10px;
+    }
+    &--delete {
+      width: 5%;
+      // background-color: deepskyblue;
+      @include mixins.flexCenter;
+
+      &-icon {
+        font-size: 1.8rem;
+        color: variables.$color-gray-4;
+
+        &:hover {
+          color: variables.$color-gray-6 !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

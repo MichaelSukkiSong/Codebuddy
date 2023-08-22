@@ -4,7 +4,6 @@ import {
   Form,
   Outlet,
   useOutlet,
-  useNavigation,
   redirect,
   useActionData,
 } from 'react-router-dom';
@@ -31,7 +30,6 @@ const AuthLayout = () => {
   const currentPathname = child?.props.children.props.match.pathname;
   // a hook to handle 'state' of the navigation ('idle', etc..)
   const errorMessage = useActionData();
-  const navigation = useNavigation();
 
   return (
     <div className="auth">

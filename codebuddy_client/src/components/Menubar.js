@@ -16,7 +16,7 @@ const Menubar = ({ items }) => {
           <div id="popup-dropdown">{item.popupText}</div>
         </div>
       );
-    } else if (item.type === 'slider') {
+    } else {
       return (
         <div className="menubar__item" key={item.name}>
           <div className="menubar__item-slider">

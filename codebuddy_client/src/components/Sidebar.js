@@ -38,7 +38,7 @@ const Sidebar = () => {
         <li className="sidebar__item">
           <NavLink
             className="sidebar__link"
-            to="syntax"
+            to="cantremembersyntax"
             end
             onClick={handleSidebarClick}
           >
@@ -51,7 +51,7 @@ const Sidebar = () => {
         <li className="sidebar__item">
           <NavLink
             className="sidebar__link"
-            to="findError"
+            to="finderror"
             onClick={handleSidebarClick}
           >
             <div className="sidebar__icon">
@@ -75,7 +75,7 @@ const Sidebar = () => {
         <li className="sidebar__item">
           <NavLink
             className="sidebar__link"
-            to="questionmark"
+            to="whatisthiscodedoing"
             onClick={handleSidebarClick}
           >
             <div className="sidebar__icon">
@@ -87,7 +87,7 @@ const Sidebar = () => {
         <li className="sidebar__item">
           <NavLink
             className="sidebar__link"
-            to="efficiency"
+            to="moreefficiency"
             onClick={handleSidebarClick}
           >
             <div className="sidebar__icon">
@@ -111,7 +111,7 @@ const Sidebar = () => {
         <li className="sidebar__item">
           <NavLink
             className="sidebar__link"
-            to="testcode"
+            to="showtestcode"
             onClick={handleSidebarClick}
           >
             <div className="sidebar__icon">

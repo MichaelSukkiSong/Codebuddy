@@ -9,6 +9,7 @@ const messagesSlice = createSlice({
     temperature: 1,
     messages: [{ id: nanoid(), type: 'TEXT', message: '' }],
     changedlanguage: '',
+    searchby: '',
   },
   reducers: {
     changeLanguage(state, action) {
@@ -22,6 +23,9 @@ const messagesSlice = createSlice({
     },
     changeChangedLanguage(state, action) {
       state.changedlanguage = action.payload;
+    },
+    changeSearchBy(state, action) {
+      state.searchby = action.payload;
     },
     addMessage(state, action) {
       state.messages.push(action.payload);
@@ -74,6 +78,7 @@ export const {
   changeFramework,
   changeTemperature,
   changeChangedLanguage,
+  changeSearchBy,
   addMessage,
   removeMessage,
   changeTypeMessage,

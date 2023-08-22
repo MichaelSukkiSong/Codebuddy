@@ -3,21 +3,22 @@ import { delay } from './delay';
 let speed = 100;
 let txtArr = [
   {
-    input: 'How do i say `hello` in Python.:D',
+    input: 'How do i say `hello` in Python?:D',
     output:
-      'To say `hello` in Python, you can use the `print` function with the string `Hello` inside parentheses.',
+      'To say `hello` in Python, you can use the `print` function with the string `Hello` inside parentheses...',
   },
   {
     input: 'How does the splice method work in javascript?',
-    output: 'The syntax of the splice method is as follows...',
-  },
-  {
-    input: `what is wrong with my code D: csonsole.log('hello there');`,
     output:
-      'There is a small typo in your code. Instead of `csonsole.log`, it should be `console.log`.',
+      'The syntax of the splice method is as follows...splice(start, deleteCount)...',
   },
   {
-    input: 'how do you make a stack with 3 queues',
+    input: `What is wrong with my code D: csonsole.log('hello there');`,
+    output:
+      'There is a small typo in your code. Instead of `csonsole.log`, it should be `console.log`...',
+  },
+  {
+    input: 'How do you make a stack with 3 queues?',
     output: `Here is one way to implement a stack using three queues in JavaScript:
 
     class Stack {
@@ -29,32 +30,25 @@ let txtArr = [
     } ...`,
   },
   {
-    input: `what is this code doing...if (messages.length === 0) {res.status(400).json({ ...`,
-    output:
-      'The provided code is a conditional statement written in JavaScript....',
-  },
-  {
-    input: 'how could i make the code more efficient?',
+    input: 'How could i make the code more efficient?',
     output:
       '1. Use efficient data structures: Ensure you are using the appropriate data structures for your code...',
   },
   {
-    input: 'I love you',
-    output: 'me too xD',
-  },
-
-  {
-    input: 'show me useful API that i can use for a space related project xD',
+    input:
+      'Show me a useful API that I can use to build a space related personal project xD',
     output:
       'NASA API provides a range of space-related data that can be useful for your project...',
   },
   {
-    input: 'how do you write test code? ',
+    input: 'How do you write test code? ',
     output:
       'To write test code, you can use a testing framework/library like JUnit for Java or PyTest for Python...',
   },
   {
-    input: `Change this code to a another language... class OpenAI {
+    input: `Change this code to an another language.
+     
+    class OpenAI {
       static getInstance() {
         return new OpenAI({
           apiKey: keys.openaiApiKey,

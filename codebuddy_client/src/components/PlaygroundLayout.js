@@ -1,5 +1,10 @@
 import './PlaygroundLayout.scss';
-import { Outlet } from 'react-router-dom';
+import {
+  Outlet,
+  useOutlet,
+  useOutletContext,
+  useNavigate,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { BsPlusCircle } from 'react-icons/bs';
@@ -14,14 +19,20 @@ import {
   removeMessage,
   changeTypeMessage,
   changeTextareaMessage,
-  useSendChatHelpImplementationMutation,
   clearMessages,
+  useAddResponseMutation,
 } from '../store';
+import useChat from '../hooks/useChat';
 
 const PlaygroundLayout = () => {
   const dispatch = useDispatch();
-  const [sendChatHelpImplementation, { isError, isLoading, data }] =
-    useSendChatHelpImplementationMutation();
+  const navigate = useNavigate();
+  const pathname = useOutlet().props.children.props.match?.pathnameBase;
+  const pathStr = pathname?.match(/\/([^/]+)$/)[1];
+  const { currentUser, error, isFetching } = useOutletContext();
+
+  const [sendChat, { isError, isLoading, data }] = useChat(pathStr)();
+  const [addResponse, results] = useAddResponseMutation();
 
   const messages = useSelector((state) => {
     return state.messages;
@@ -38,8 +49,10 @@ const PlaygroundLayout = () => {
     contentCode = '';
     contentText = '';
   } else {
-    contentCode = parseStringData(data.result.content)[0];
-    contentText = parseStringData(data.result.content)[1];
+    // console.log('response data:', data);
+
+    contentCode = parseStringData(data.results.choices[0].message.content)[0];
+    contentText = parseStringData(data.results.choices[0].message.content)[1];
   }
 
   const handleAddMessageClick = () => {
@@ -67,11 +80,16 @@ const PlaygroundLayout = () => {
   };
 
   const handleSubmitClick = () => {
-    sendChatHelpImplementation(messages);
+    sendChat(messages);
   };
 
   const handleClearClick = () => {
     dispatch(clearMessages());
+  };
+
+  const onSaveClick = () => {
+    addResponse({ response: data.results, section: data.section });
+    navigate('/mycode');
   };
 
   const renderedMessages = messages.messages.map((message) => {
@@ -100,6 +118,7 @@ const PlaygroundLayout = () => {
       </div>
     );
   });
+
   return (
     <div className="playground">
       <div className="playground__sidebar">
@@ -150,9 +169,11 @@ const PlaygroundLayout = () => {
               </Button>
             </div>
             <div className="pg-section__footer-right">
-              <Button rounded success>
-                Save
-              </Button>
+              {currentUser ? (
+                <Button rounded success onClick={onSaveClick} disabled={!data}>
+                  Save
+                </Button>
+              ) : null}
             </div>
           </div>
         </div>

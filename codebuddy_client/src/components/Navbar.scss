@@ -14,6 +14,7 @@
   overflow: hidden;
   background-color: variables.$color-white;
   // background-color: coral;
+  z-index: 9999;
 
   &__logobox {
     height: 100%;
@@ -45,6 +46,7 @@
     font-size: variables.$default-font-size-small-1;
     font-weight: 400;
     color: variables.$color-gray-6;
+    transition: all 0.2s;
 
     &:hover {
       color: variables.$color-gray-7;
@@ -54,6 +56,7 @@
       @include mixins.flexCenter;
       text-decoration: none;
       color: variables.$color-gray-6;
+      transition: all 0.2s;
 
       &:hover {
         color: variables.$color-gray-7;

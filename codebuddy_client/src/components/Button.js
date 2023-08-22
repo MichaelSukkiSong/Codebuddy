@@ -1,6 +1,5 @@
 import './Button.scss';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 
 const Button = ({
   children,
@@ -13,6 +12,7 @@ const Button = ({
   info,
   rounded,
   outlined,
+  disabled,
   ...rest
 }) => {
   const classNames = classnames(className, 'button', {
@@ -24,10 +24,11 @@ const Button = ({
     info,
     rounded,
     outlined,
+    disabled,
   });
 
   return (
-    <button className={classNames} {...rest}>
+    <button className={classNames} {...rest} disabled={disabled}>
       {children}
     </button>
   );

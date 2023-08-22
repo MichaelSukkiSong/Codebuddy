@@ -5,8 +5,10 @@ const passport = require('passport');
 const cors = require('cors');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Response');
 require('./services/passport');
 require('./services/openai');
+require('./middlewares/requireAuth');
 
 const app = express();
 app.use(express.json());
@@ -36,6 +38,10 @@ app.use(passport.session());
 // Routes
 require('./routes/authRoutes')(app);
 require('./routes/chatRoutes')(app);
+
+// Protected Routes
+app.use(requireAuth);
+require('./routes/responsesRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

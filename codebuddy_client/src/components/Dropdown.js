@@ -1,6 +1,6 @@
 import './Dropdown.scss';
 import { useState, useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsChevronDown } from 'react-icons/bs';
 import genActionDropdown from '../utilities/genActionDropdown';
 
@@ -30,7 +30,7 @@ const Dropdown = ({ data, name }) => {
 
   const handleSelectClick = (item) => {
     dispatch(genActionDropdown(name)(item.value));
-    setSelected(item.value);
+    setSelected(item.label);
     setIsOpen(false);
   };
 
@@ -40,7 +40,7 @@ const Dropdown = ({ data, name }) => {
         onClick={() => handleSelectClick(item)}
         key={item.value}
         className={`dropdown__content__item ${
-          selected === item.value ? 'selected' : null
+          selected === item.label ? 'selected' : null
         }`}
       >
         {item.label}

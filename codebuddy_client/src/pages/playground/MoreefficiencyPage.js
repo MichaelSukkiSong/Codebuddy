@@ -3,13 +3,14 @@ import Menubar from '../../components/Menubar';
 
 const MoreefficiencyPage = () => {
   const languageData = [
-    { label: 'javascript', value: 'javascript' },
-    { label: 'java', value: 'java' },
-    { label: 'python', value: 'python' },
-    { label: 'php', value: 'php' },
-    { label: 'ruby', value: 'ruby' },
+    { label: 'Javascript', value: 'javascript' },
+    { label: 'Java', value: 'java' },
+    { label: 'Python', value: 'python' },
+    { label: 'Php', value: 'php' },
+    { label: 'Ruby', value: 'ruby' },
     { label: 'C+', value: 'C+' },
   ];
+
   const frameworkOrlibrariesData = [
     { label: 'Reactjs', value: 'Reactjs' },
     { label: 'Angularjs', value: 'Angularjs' },
