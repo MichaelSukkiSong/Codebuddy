@@ -19,23 +19,47 @@ const Footer = () => {
             <span>CodeBuddy</span>
           </div>
           <div className="footer__section--text">
-            Mike is a software developer based in Fremont, California.
+            Michael is a software developer based in Fremont, California.
           </div>
           <div className="footer__section--sns">
             <div className="footer__snsbox">
               <ul className="footer__snslist">
-                <li className="footer__snsitem">
-                  <BsMeta />
-                </li>
-                <li className="footer__snsitem">
-                  <FaTwitter />
-                </li>
-                <li className="footer__snsitem">
-                  <FaInstagram />
-                </li>
-                <li className="footer__snsitem">
-                  <FaYoutube />
-                </li>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="footer__snsitem">
+                    <BsMeta />
+                  </li>
+                </a>
+                <a
+                  href="https://www.twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="footer__snsitem">
+                    <FaTwitter />
+                  </li>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="footer__snsitem">
+                    <FaInstagram />
+                  </li>
+                </a>
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li className="footer__snsitem">
+                    <FaYoutube />
+                  </li>
+                </a>
               </ul>
             </div>
           </div>
@@ -43,16 +67,15 @@ const Footer = () => {
         <div className="footer__section">
           <div className="footer__section--title">About</div>
           <div className="footer__section--list">
-            <div className="footer__section--item">about</div>
-            <div className="footer__section--item">careers</div>
-            <div className="footer__section--item">terms of service</div>
+            <div className="footer__section--item">About</div>
+            <div className="footer__section--item">Careers</div>
           </div>
         </div>
         <div className="footer__section">
           <div className="footer__section--title">Services</div>
           <div className="footer__section--list">
             <div className="footer__section--item">Integrations and API</div>
-            <div className="footer__section--item">Prject management</div>
+            <div className="footer__section--item">Project management</div>
           </div>
         </div>
         <div className="footer__section">

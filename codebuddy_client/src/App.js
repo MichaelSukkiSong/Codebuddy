@@ -7,9 +7,7 @@ import {
 } from 'react-router-dom';
 import Layout from './components/Layout';
 import PlaygroundLayout from './components/PlaygroundLayout';
-import AuthLayout, {
-  action as authLayoutAction,
-} from './components/AuthLayout';
+import AuthLayout from './components/AuthLayout';
 import MycodeLayout, {
   loader as mycodeLayoutLoader,
 } from './components/MycodeLayout';
@@ -18,8 +16,11 @@ import MycodePage, { loader as mycodePageLoader } from './pages/MycodePage';
 import MycodeDetailPage, {
   loader as mycodeDetailPageLoader,
 } from './pages/MycodeDetailPage';
-import LoginPage, { loader as loginPageLoader } from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
+import LoginPage, {
+  loader as loginPageLoader,
+  action as loginPageAction,
+} from './pages/LoginPage';
+import SignupPage, { action as signupPageAction } from './pages/SignupPage';
 import HelpimplementationPage from './pages/playground/HelpimplementationPage';
 import CantremembersyntaxPage from './pages/playground/CantremembersyntaxPage';
 import FinderrorPage from './pages/playground/FinderrorPage';
@@ -108,21 +109,18 @@ const router = createBrowserRouter(
           />
         </Route>
       </Route>
-      <Route
-        path="auth"
-        element={<AuthLayout />}
-        action={authLayoutAction}
-        errorElement={<Error />}
-      >
+      <Route path="auth" element={<AuthLayout />} errorElement={<Error />}>
         <Route
           path="login"
           element={<LoginPage />}
           loader={loginPageLoader}
+          action={loginPageAction}
           errorElement={<Error />}
         />
         <Route
           path="signup"
           element={<SignupPage />}
+          action={signupPageAction}
           errorElement={<Error />}
         />
       </Route>

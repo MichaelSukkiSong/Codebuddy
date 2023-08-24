@@ -6,6 +6,7 @@ const authApi = createApi({
     baseUrl: 'http://localhost:5000',
     credentials: 'include',
   }),
+  refetchOnMountOrArgChange: 1,
   endpoints(builder) {
     return {
       fetchCurrentuser: builder.query({
