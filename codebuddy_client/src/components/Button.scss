@@ -102,6 +102,7 @@
   border: 1px solid variables.$color-gray-5;
   transform: none;
   box-shadow: none;
+  cursor: not-allowed;
 
   &:hover {
     background-color: variables.$color-gray-5;
