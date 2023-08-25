@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const requireAuth = require('../middlewares/requireAuth');
 
 const Response = mongoose.model('responses');
 
 module.exports = (app) => {
-  app.get('/api/responses', async (req, res) => {
+  app.get('/api/responses', requireAuth, async (req, res) => {
     const responses = await Response.find({ userId: req.user.id });
     // console.log(responses);
 

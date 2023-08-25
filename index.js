@@ -40,7 +40,7 @@ require('./routes/authRoutes')(app);
 require('./routes/chatRoutes')(app);
 
 // Protected Routes
-app.use(requireAuth);
+// app.use(requireAuth);
 require('./routes/responsesRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
