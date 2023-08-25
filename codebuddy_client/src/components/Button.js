@@ -1,5 +1,6 @@
 import './Button.scss';
 import classnames from 'classnames';
+import { GoSync } from 'react-icons/go';
 
 const Button = ({
   children,
@@ -13,6 +14,7 @@ const Button = ({
   rounded,
   outlined,
   disabled,
+  loading,
   ...rest
 }) => {
   const classNames = classnames(className, 'button', {
@@ -27,9 +29,32 @@ const Button = ({
     disabled,
   });
 
+  let disabledState;
+  if (disabled && !loading) {
+    disabledState = true;
+  } else if (disabled && loading) {
+    disabledState = true;
+  } else if (!disabled && !loading) {
+    disabledState = false;
+  } else if (!disabled && loading) {
+    disabledState = false;
+  }
+
+  const getButtonContent = () => {
+    if (disabled && !loading) {
+      return children;
+    } else if (disabled && loading) {
+      return children;
+    } else if (!disabled && !loading) {
+      return children;
+    } else if (!disabled && loading) {
+      return <GoSync className="spin-loader" />;
+    }
+  };
+
   return (
-    <button className={classNames} {...rest} disabled={disabled}>
-      {children}
+    <button className={classNames} {...rest} disabled={disabledState}>
+      {getButtonContent()}
     </button>
   );
 };

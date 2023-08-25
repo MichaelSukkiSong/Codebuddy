@@ -64,7 +64,7 @@ const LandingPage = () => {
                 <h2>An AI friend right by your side</h2>
                 Codebuddy helps you with your code by pre-configuring all the
                 boring, monotonous, repetitive text that you have to type before
-                you actually ask the real question to chatGPT
+                you actually ask the real question to GPT
               </div>
             </div>
             <div className="section__about--part-image">

@@ -6,6 +6,8 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { BsPlusCircle } from 'react-icons/bs';
 import { BiMinusCircle } from 'react-icons/bi';
@@ -25,31 +27,45 @@ import {
 import useChat from '../hooks/useChat';
 
 const PlaygroundLayout = () => {
+  const codeRef = useRef(null);
+  const textRef = useRef(null);
+  const inputRef = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const pathname = useOutlet().props.children.props.match?.pathnameBase;
   const pathStr = pathname?.match(/\/([^/]+)$/)[1];
   const { currentUser, error, isFetching } = useOutletContext();
-
   const [sendChat, { isError, isLoading, data }] = useChat(pathStr)();
   const [addResponse, results] = useAddResponseMutation();
 
-  const messages = useSelector((state) => {
-    return state.messages;
+  const messages = useSelector(({ messages }) => {
+    return messages;
   });
+
+  const isMessagesEmpty =
+    messages.messages
+      .map(({ message }) => {
+        return message.trim();
+      })
+      .filter((el) => el !== '').length > 0
+      ? false
+      : true;
 
   let contentCode, contentText;
   if (isError) {
     contentCode = 'Error...';
     contentText = 'Error...';
   } else if (isLoading) {
-    contentCode = 'Loading...';
-    contentText = 'Loading...';
+    contentCode = '';
+    contentText = '';
+    codeRef.current.classList.add('loading-spinner-code');
+    textRef.current.classList.add('loading-spinner-text');
   } else if (!data) {
     contentCode = '';
     contentText = '';
   } else {
-    // console.log('response data:', data);
+    codeRef.current.classList.remove('loading-spinner-code');
+    textRef.current.classList.remove('loading-spinner-text');
 
     contentCode = parseStringData(data.results.choices[0].message.content)[0];
     contentText = parseStringData(data.results.choices[0].message.content)[1];
@@ -92,6 +108,17 @@ const PlaygroundLayout = () => {
     navigate('/mycode');
   };
 
+  const onResetClick = () => {
+    window.location.reload();
+  };
+
+  const handleEnterKeyPress = (event) => {
+    if (event.keyCode === 13) {
+      sendChat(messages);
+      inputRef.current.blur();
+    }
+  };
+
   const renderedMessages = messages.messages.map((message) => {
     return (
       <div className="pg-message" key={message.id} data-msgid={message.id}>
@@ -106,6 +133,8 @@ const PlaygroundLayout = () => {
             rows={5}
             onChange={handleTextareaChange}
             placeholder="Enter a message here."
+            onKeyDown={handleEnterKeyPress}
+            ref={inputRef}
           />
         </div>
         <div className="pg-message__delete">
@@ -147,10 +176,10 @@ const PlaygroundLayout = () => {
             </div>
             <div className="pg-section__content--output">
               <div className="pg-section__content--output-code">
-                <textarea value={contentCode} readOnly />
+                <textarea value={contentCode} readOnly ref={codeRef} />
               </div>
               <div className="pg-section__content--output-text">
-                <textarea value={contentText} readOnly />
+                <textarea value={contentText} readOnly ref={textRef} />
               </div>
             </div>
           </div>
@@ -160,17 +189,47 @@ const PlaygroundLayout = () => {
                 rounded
                 secondary
                 onClick={handleClearClick}
-                style={{ marginRight: '2rem' }}
+                style={{ marginRight: '2rem', width: '200px' }}
               >
-                Clear All Messages
+                Clear Messages
               </Button>
-              <Button rounded primary onClick={handleSubmitClick}>
+              <Button
+                rounded
+                primary
+                onClick={handleSubmitClick}
+                disabled={isMessagesEmpty || data}
+                loading={isLoading}
+              >
                 Submit
               </Button>
             </div>
             <div className="pg-section__footer-right">
+              {currentUser ? null : (
+                <div className="pg-section__footer-right-promotext">
+                  Become a member to <b>SAVE</b> your response 🙂&nbsp; &nbsp;
+                  <Link to="/auth/login">Log in</Link>
+                </div>
+              )}
+              {true ? (
+                <Button
+                  rounded
+                  info
+                  style={{ width: '140px' }}
+                  onClick={onResetClick}
+                  disabled={!data}
+                  loading={isLoading}
+                >
+                  Reset All
+                </Button>
+              ) : null}
               {currentUser ? (
-                <Button rounded success onClick={onSaveClick} disabled={!data}>
+                <Button
+                  rounded
+                  success
+                  onClick={onSaveClick}
+                  disabled={!data}
+                  loading={isLoading}
+                >
                   Save
                 </Button>
               ) : null}

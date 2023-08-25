@@ -50,11 +50,18 @@
         &-code {
           height: 65%;
           @include mixins.flexCenter;
+          // background-color: aqua;
+
+          & > textarea {
+          }
         }
 
         &-text {
           height: 35%;
           @include mixins.flexCenter;
+
+          & > textarea {
+          }
         }
       }
     }
@@ -79,9 +86,29 @@
         width: 50%;
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: center;
         padding-right: 3.5rem;
-        padding-bottom: 1rem;
+        gap: 2rem;
+
+        &-promotext {
+          // background-color: chartreuse;
+          font-style: italic;
+          font-size: variables.$default-font-size-small-1;
+
+          & b {
+            color: variables.$color-primary-6;
+          }
+
+          & a {
+            text-decoration: none;
+            font-style: normal;
+            color: variables.$color-primary-6;
+
+            &:hover {
+              color: variables.$color-primary-8;
+            }
+          }
+        }
       }
     }
   }
@@ -198,4 +225,20 @@ textarea {
   &:focus {
     outline: none;
   }
+}
+
+.loading-spinner-code {
+  // background-color: aquamarine;
+  background-image: url(https://i.gifer.com/H8Al.gif);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.loading-spinner-text {
+  // background-color: aquamarine;
+  background-image: url(https://i.gifer.com/H8Al.gif);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
