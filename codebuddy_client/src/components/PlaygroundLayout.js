@@ -1,4 +1,5 @@
 import './PlaygroundLayout.scss';
+import { useEffect, useRef, useState } from 'react';
 import {
   Outlet,
   useOutlet,
@@ -7,10 +8,10 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { BsPlusCircle } from 'react-icons/bs';
 import { BiMinusCircle } from 'react-icons/bi';
+import { VscTriangleRight } from 'react-icons/vsc';
 import Sidebar from './Sidebar';
 import Button from './Button';
 import ArrowAnimation from './animations/ArrowAnimation';
@@ -30,6 +31,11 @@ const PlaygroundLayout = () => {
   const codeRef = useRef(null);
   const textRef = useRef(null);
   const inputRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const pulloutRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [sidebarWidth, setSidebarWidth] = useState(300);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const pathname = useOutlet().props.children.props.match?.pathnameBase;
@@ -41,6 +47,14 @@ const PlaygroundLayout = () => {
   const messages = useSelector(({ messages }) => {
     return messages;
   });
+
+  useEffect(() => {
+    if (sidebarWidth < 220) {
+      sidebarRef.current.style.display = 'none';
+      pulloutRef.current.style.display = 'block';
+      pulloutRef.current.style.visibility = 'visible';
+    }
+  }, [sidebarWidth]);
 
   const isMessagesEmpty =
     messages.messages
@@ -119,6 +133,37 @@ const PlaygroundLayout = () => {
     }
   };
 
+  const handleDragBarMouseDown = (e) => {
+    // setSidebarWidth(300);
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+  const handleDragBarMouseMove = (e) => {
+    if (!isDragging) return;
+
+    const offsetX = (e.clientX - startX) / 50;
+    setSidebarWidth((prevWidth) => Math.max(0, prevWidth + offsetX));
+
+    sidebarRef.current.style.width = sidebarWidth / 10 + 'rem';
+  };
+  const handleDragBarMouseUp = (e) => {
+    setIsDragging(false);
+  };
+  const handleDragBarMouseLeave = (e) => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
+  const handlePulloutBtnClick = () => {
+    sidebarRef.current.style.display = 'flex';
+    setSidebarWidth(300);
+    sidebarRef.current.style.width = 30 + 'rem';
+
+    pulloutRef.current.style.display = 'none';
+    pulloutRef.current.style.visibility = 'hidden';
+  };
+
   const renderedMessages = messages.messages.map((message) => {
     return (
       <div className="pg-message" key={message.id} data-msgid={message.id}>
@@ -149,9 +194,27 @@ const PlaygroundLayout = () => {
   });
 
   return (
-    <div className="playground">
-      <div className="playground__sidebar">
+    <div
+      className="playground"
+      onMouseMove={handleDragBarMouseMove}
+      onMouseUp={handleDragBarMouseUp}
+      onMouseLeave={handleDragBarMouseLeave}
+    >
+      <div className="playground__sidebar" ref={sidebarRef}>
         <Sidebar />
+        <div
+          className="playground__sidebar-dragbar"
+          onMouseDown={handleDragBarMouseDown}
+        ></div>
+      </div>
+      <div
+        className="playground__sidebar-pulloutBtn"
+        ref={pulloutRef}
+        onClick={handlePulloutBtnClick}
+      >
+        <div className="playground__sidebar-pulloutBtn--icon">
+          <VscTriangleRight />
+        </div>
       </div>
       <div className="playground__outlet">
         <div className="pg-section">

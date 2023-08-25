@@ -1,5 +1,4 @@
 import './Sidebar.scss';
-import { clearMessagesExceptOne } from '../store';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { TbBulb } from 'react-icons/tb';
@@ -11,6 +10,7 @@ import { BsLightningCharge } from 'react-icons/bs';
 import { BsGlobe } from 'react-icons/bs';
 import { GrTest } from 'react-icons/gr';
 import { TbArrowsExchange } from 'react-icons/tb';
+import { clearMessagesExceptOne } from '../store';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
