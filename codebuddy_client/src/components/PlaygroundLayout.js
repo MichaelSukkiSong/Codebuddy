@@ -175,6 +175,7 @@ const PlaygroundLayout = () => {
         </div>
         <div className="pg-message__input">
           <textarea
+            className="pg__textarea"
             rows={5}
             onChange={handleTextareaChange}
             placeholder="Enter a message here."
@@ -239,10 +240,20 @@ const PlaygroundLayout = () => {
             </div>
             <div className="pg-section__content--output">
               <div className="pg-section__content--output-code">
-                <textarea value={contentCode} readOnly ref={codeRef} />
+                <textarea
+                  value={contentCode}
+                  readOnly
+                  ref={codeRef}
+                  className="pg__textarea"
+                />
               </div>
               <div className="pg-section__content--output-text">
-                <textarea value={contentText} readOnly ref={textRef} />
+                <textarea
+                  value={contentText}
+                  readOnly
+                  ref={textRef}
+                  className="pg__textarea"
+                />
               </div>
             </div>
           </div>

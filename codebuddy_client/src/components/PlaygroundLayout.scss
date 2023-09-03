@@ -247,19 +247,19 @@
       }
     }
   }
-}
 
-textarea {
-  resize: none;
-  overflow: auto;
-  width: 90%;
-  height: 90%;
-  padding: 10px;
-  display: inline-block;
-  margin: 10px auto;
+  &__textarea {
+    resize: none;
+    overflow: auto;
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px auto;
 
-  &:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
   }
 }
 

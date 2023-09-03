@@ -99,7 +99,7 @@
   &__editor {
     @include mixins.flexCenter;
     background-color: variables.$color-black;
-    height: 85%;
+    height: 100%;
     width: 100%;
     color: variables.$color-gray-3;
     padding: 1rem 1rem;
@@ -108,9 +108,29 @@
     line-height: 20px;
 
     &-input {
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
     }
 
     &-output {
+      font-size: variables.$default-font-size-small-1;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+
+      // background-color: aqua;
+      resize: none;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      display: inline-block;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -228,4 +248,9 @@
       }
     }
   }
+}
+
+.Typewriter__wrapper {
+}
+.Typewriter__cursor {
 }
