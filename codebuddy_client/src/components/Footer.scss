@@ -37,6 +37,10 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
+
+    @include mixins.respond(phone) {
+      display: block;
+    }
   }
 
   &__section {
@@ -44,6 +48,10 @@
     font-size: variables.$default-font-size;
     color: variables.$color-gray-3;
     padding: 2rem 4rem;
+
+    @include mixins.respond(tab-land) {
+      padding: 0.5rem 1rem;
+    }
 
     &--title {
       font-size: variables.$default-font-size-2;

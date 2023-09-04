@@ -7,12 +7,22 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  overflow: hidden;
+  overflow: scroll;
   // background-color: cornflowerblue;
+
+  @include mixins.respond(phone) {
+    display: block;
+    overflow: scroll;
+  }
 
   &__sidebar {
     width: 30rem;
     display: flex;
+
+    @include mixins.respond(phone) {
+      width: 100%;
+      height: 50rem;
+    }
 
     &-dragbar {
       background-color: variables.$color-gray-0;
@@ -66,10 +76,18 @@
       // background-color: chartreuse;
       display: flex;
 
+      @include mixins.respond(phone) {
+        display: block;
+      }
+
       &--input {
         width: 47%;
         // background-color: red;
         overflow-y: scroll;
+
+        @include mixins.respond(phone) {
+          width: 100%;
+        }
       }
 
       &--arrow {
@@ -77,11 +95,22 @@
         // background-color: orange;
         display: flex;
         align-items: center;
+
+        @include mixins.respond(phone) {
+          width: 100%;
+          @include mixins.flexCenter;
+          margin-bottom: 1rem;
+        }
       }
 
       &--output {
         width: 47%;
         // background-color: cadetblue;
+
+        @include mixins.respond(phone) {
+          width: 100%;
+          height: 100rem;
+        }
 
         &-code {
           height: 65%;
@@ -107,6 +136,10 @@
       // background-color: antiquewhite;
       display: flex;
 
+      @include mixins.respond(phone) {
+        display: block;
+      }
+
       &-left {
         // background-color: darkorchid;
         width: 50%;
@@ -115,6 +148,10 @@
         align-items: flex-end;
         padding-right: 7rem;
         padding-bottom: 1rem;
+
+        @include mixins.respond(phone) {
+          width: 100%;
+        }
       }
 
       &-right {
@@ -125,6 +162,10 @@
         align-items: center;
         padding-right: 3.5rem;
         gap: 2rem;
+
+        @include mixins.respond(phone) {
+          width: 100%;
+        }
 
         &-promotext {
           // background-color: chartreuse;

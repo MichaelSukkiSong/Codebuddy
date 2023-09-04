@@ -11,6 +11,13 @@
   height: 5rem;
   @include mixins.flexCenter;
 
+  @include mixins.respond(tab-land) {
+    font-size: 1.7rem;
+  }
+  @include mixins.respond(tab-port) {
+    font-size: 1.5rem;
+  }
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 4px 4px 10px variables.$color-gray-5;

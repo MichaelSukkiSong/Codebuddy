@@ -36,6 +36,10 @@
     display: inline-block;
     margin: 0 2rem;
 
+    @include mixins.respond(phone) {
+      margin: 0 0.8rem;
+    }
+
     & a.active {
       color: variables.$color-primary-6;
     }

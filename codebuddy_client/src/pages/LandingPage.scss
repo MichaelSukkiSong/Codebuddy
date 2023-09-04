@@ -139,6 +139,10 @@
   // background-color: aquamarine;
   padding: 10rem 20rem;
 
+  @include mixins.respond(tab-port) {
+    padding: 2.5rem 5rem;
+  }
+
   &--header {
     display: block;
     text-align: center;
@@ -168,6 +172,10 @@
     border-radius: 5px;
     box-shadow: 10px 10px 20px variables.$color-gray-3;
 
+    @include mixins.respond(phone) {
+      display: inline-block;
+    }
+
     &-text {
       // background-color: burlywood;
       width: 100%;
@@ -175,6 +183,10 @@
       @include mixins.flexCenter;
       border-radius: 5px;
       padding: 4rem 8rem;
+
+      @include mixins.respond(tab-port) {
+        padding: 2rem 4rem;
+      }
     }
     &-image {
       // background-color: deepskyblue;
@@ -182,6 +194,10 @@
       height: 100%;
       @include mixins.flexCenter;
       border-radius: 5px;
+
+      @include mixins.respond(phone) {
+        display: none;
+      }
     }
   }
 
@@ -189,6 +205,10 @@
     font-size: variables.$default-font-size;
     padding: 40px;
     color: variables.$color-gray-6;
+
+    @include mixins.respond(tab-land) {
+      padding: 0;
+    }
 
     & > h2 {
       font-size: variables.$default-font-size-3;
@@ -230,6 +250,11 @@
       z-index: 8;
       transition: all 0.4s;
 
+      @include mixins.respond(tab-land) {
+        top: 16rem;
+        left: 8rem;
+      }
+
       &:hover {
         transform: translateY(-5px);
         z-index: 999;
@@ -241,6 +266,11 @@
       position: absolute;
       z-index: 6;
       transition: all 0.4s;
+
+      @include mixins.respond(tab-land) {
+        top: 12rem;
+        left: 6rem;
+      }
 
       &:hover {
         transform: translateY(-5px);

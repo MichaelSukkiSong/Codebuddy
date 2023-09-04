@@ -17,6 +17,10 @@
       width: 65%;
       height: 95%;
       overflow-y: scroll;
+
+      @include mixins.respond(phone) {
+        width: 75%;
+      }
     }
   }
 
@@ -79,6 +83,11 @@
     height: 100%;
 
     @include mixins.flexCenter;
+
+    & > textarea {
+      height: 90%;
+      width: 100%;
+    }
   }
 
   &__btn {

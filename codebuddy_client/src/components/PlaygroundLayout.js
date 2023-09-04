@@ -263,7 +263,7 @@ const PlaygroundLayout = () => {
                 rounded
                 secondary
                 onClick={handleClearClick}
-                style={{ marginRight: '2rem', width: '200px' }}
+                style={{ marginRight: '2rem', width: '20rem' }}
               >
                 Clear Messages
               </Button>
@@ -288,7 +288,7 @@ const PlaygroundLayout = () => {
                 <Button
                   rounded
                   info
-                  style={{ width: '140px' }}
+                  style={{ width: '14rem' }}
                   onClick={onResetClick}
                   disabled={!data}
                   loading={isLoading}

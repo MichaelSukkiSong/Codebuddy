@@ -129,5 +129,8 @@
       text-decoration: none;
       color: variables.$color-gray-6;
     }
+
+    @include mixins.respond(tab-land) {
+    }
   }
 }
