@@ -5,7 +5,6 @@
 .login {
   &__main {
     &-header {
-      // background-color: coral;
       height: 14rem;
 
       &--title {
@@ -28,7 +27,6 @@
   }
 
   &__form {
-    // background-color: chartreuse;
     width: 100%;
     height: 100%;
     display: flex;
@@ -37,7 +35,6 @@
     align-items: center;
 
     &-box {
-      // background-color: aquamarine;
       height: 19rem;
       @include mixins.flexCenter;
     }
@@ -68,7 +65,6 @@
     }
 
     &-btn {
-      // background-color: darkmagenta;
       width: 100%;
 
       & button {
@@ -87,7 +83,6 @@
   }
 
   &__tologin {
-    // background-color: blueviolet;
     height: 5rem;
     @include mixins.flexCenter;
     font-size: variables.$default-font-size-small-1;

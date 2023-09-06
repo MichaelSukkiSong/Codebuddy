@@ -7,7 +7,6 @@
 
   &__header {
     width: 100%;
-    // background-color: aqua;
     height: 6rem;
 
     @include mixins.flexCenter;
@@ -19,24 +18,20 @@
 
   &__main {
     width: 100%;
-    // background-color: darkseagreen;
     height: 65rem;
     @include mixins.flexCenter;
 
     &-box {
-      // background-color: greenyellow;
       width: 30rem;
       height: 56rem;
     }
 
     &-content {
-      // background-color: darkolivegreen;
       height: 42rem;
     }
   }
 
   &__divider {
-    // background-color: cornflowerblue;
     height: 3rem;
     @include mixins.flexCenter;
 
@@ -46,7 +41,6 @@
       border-bottom: 1px solid variables.$color-gray-4;
       height: 0.5rem;
       width: 12rem;
-      // background-color: aqua;
       margin-right: 5px;
       margin-bottom: 2px;
     }
@@ -56,21 +50,18 @@
       border-bottom: 1px solid variables.$color-gray-4;
       height: 0.5rem;
       width: 12rem;
-      // background-color: aqua;
       margin-left: 5px;
       margin-bottom: 2px;
     }
   }
 
   &__oauth {
-    // background-color: grey;
     height: 20rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
     &--form {
-      // background-color: aqua;
       display: block;
       width: 100%;
       height: 100%;
@@ -78,7 +69,6 @@
 
     &--google {
       width: 100%;
-      // background-color: bisque;
       margin: 5px auto;
 
       &-link {
@@ -118,7 +108,6 @@
 
   &__footer {
     width: 100%;
-    // background-color: crimson;
     height: 6rem;
     @include mixins.flexCenter;
     color: variables.$color-gray-6;

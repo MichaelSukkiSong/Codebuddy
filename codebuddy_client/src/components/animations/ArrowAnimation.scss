@@ -2,14 +2,12 @@
 
 #arrowAnim {
   position: relative;
-  // background-color: burlywood;
 }
 
 .arrow {
   width: 5rem;
   height: 5rem;
   border: 2.5rem solid;
-  // background-color: cornflowerblue;
   border-color: transparent variables.$color-primary-6
     variables.$color-primary-6 transparent;
   transform: rotate(-45deg);
@@ -20,7 +18,6 @@
   &-small {
     width: 2.5rem;
     height: 2.5rem;
-    // background-color: aqua;
     border: 1.25rem solid;
     border-color: transparent variables.$color-primary-6
       variables.$color-primary-6 transparent;

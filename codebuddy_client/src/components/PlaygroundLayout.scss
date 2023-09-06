@@ -8,7 +8,6 @@
   justify-content: flex-start;
   align-items: stretch;
   overflow: scroll;
-  // background-color: cornflowerblue;
 
   @include mixins.respond(phone) {
     display: block;
@@ -32,7 +31,6 @@
     }
 
     &-pulloutBtn {
-      // background-color: aqua;
       width: 60px;
       display: none;
       visibility: hidden;
@@ -44,7 +42,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        // background-color: brown;
         width: 40px;
         height: 60px;
         padding: 4.5px 1px;
@@ -73,7 +70,6 @@
     &__content {
       height: 75%;
       width: 100%;
-      // background-color: chartreuse;
       display: flex;
 
       @include mixins.respond(phone) {
@@ -82,7 +78,6 @@
 
       &--input {
         width: 47%;
-        // background-color: red;
         overflow-y: scroll;
 
         @include mixins.respond(phone) {
@@ -92,7 +87,6 @@
 
       &--arrow {
         width: 6%;
-        // background-color: orange;
         display: flex;
         align-items: center;
 
@@ -105,7 +99,6 @@
 
       &--output {
         width: 47%;
-        // background-color: cadetblue;
 
         @include mixins.respond(phone) {
           width: 100%;
@@ -115,7 +108,6 @@
         &-code {
           height: 65%;
           @include mixins.flexCenter;
-          // background-color: aqua;
 
           & > textarea {
           }
@@ -133,7 +125,6 @@
 
     &__footer {
       height: 10%;
-      // background-color: antiquewhite;
       display: flex;
 
       @include mixins.respond(phone) {
@@ -141,7 +132,6 @@
       }
 
       &-left {
-        // background-color: darkorchid;
         width: 50%;
         display: flex;
         justify-content: flex-end;
@@ -155,7 +145,6 @@
       }
 
       &-right {
-        // background-color: yellowgreen;
         width: 50%;
         display: flex;
         justify-content: flex-end;
@@ -168,7 +157,6 @@
         }
 
         &-promotext {
-          // background-color: chartreuse;
           font-style: italic;
           font-size: variables.$default-font-size-small-1;
 
@@ -191,7 +179,6 @@
   }
 
   &-message {
-    // background-color: chartreuse;
     border-bottom: 1px solid variables.$color-gray-5;
     padding: 3px;
     display: flex;
@@ -219,7 +206,6 @@
 
     &__type {
       width: 15%;
-      // background-color: cadetblue;
       @include mixins.flexCenter;
       font-size: variables.$default-font-size;
       font-weight: 800;
@@ -252,7 +238,6 @@
 
     &__delete {
       width: 10%;
-      // background-color: deepskyblue;
       @include mixins.flexCenter;
 
       &-icon {
@@ -268,7 +253,6 @@
 
     &__add {
       height: 5rem;
-      // background-color: gold;
       font-size: 1.4rem;
       font-weight: 600;
       display: flex;
@@ -305,7 +289,6 @@
 }
 
 .loading-spinner-code {
-  // background-color: aquamarine;
   background-image: url(https://i.gifer.com/H8Al.gif);
   background-repeat: no-repeat;
   background-size: auto;
@@ -313,7 +296,6 @@
 }
 
 .loading-spinner-text {
-  // background-color: aquamarine;
   background-image: url(https://i.gifer.com/H8Al.gif);
   background-repeat: no-repeat;
   background-size: auto;
