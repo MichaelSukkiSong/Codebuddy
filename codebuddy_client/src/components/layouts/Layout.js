@@ -1,8 +1,8 @@
 import './Layout.scss';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import { useFetchCurrentuserQuery } from '../store';
+import Navbar from '../Navbar';
+import { useFetchCurrentuserQuery } from '../../store';
 
 const Layout = () => {
   const { data: currentUser, error, isFetching } = useFetchCurrentuserQuery();

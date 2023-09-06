@@ -5,12 +5,12 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
-import Layout from './components/Layout';
-import PlaygroundLayout from './components/PlaygroundLayout';
-import AuthLayout from './components/AuthLayout';
+import Layout from './components/layouts/Layout';
+import PlaygroundLayout from './components/layouts/PlaygroundLayout';
+import AuthLayout from './components/layouts/AuthLayout';
 import MycodeLayout, {
   loader as mycodeLayoutLoader,
-} from './components/MycodeLayout';
+} from './components/layouts/MycodeLayout';
 import LandingPage from './pages/LandingPage';
 import MycodePage, { loader as mycodePageLoader } from './pages/MycodePage';
 import MycodeDetailPage, {

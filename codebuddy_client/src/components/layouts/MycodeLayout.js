@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { requireAuth } from '../utilities/requireAuth';
+import { requireAuth } from '../../utilities/requireAuth';
 
 export const loader = async () => {
   await requireAuth();

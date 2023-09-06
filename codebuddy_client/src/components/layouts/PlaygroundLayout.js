@@ -12,11 +12,11 @@ import { nanoid } from 'nanoid';
 import { BsPlusCircle } from 'react-icons/bs';
 import { BiMinusCircle } from 'react-icons/bi';
 import { VscTriangleRight } from 'react-icons/vsc';
-import Sidebar from './Sidebar';
-import Button from './Button';
-import ArrowAnimation from './animations/ArrowAnimation';
-import Arrow from './Arrow';
-import parseStringData from '../utilities/parseStringData';
+import Sidebar from '../Sidebar';
+import Button from '../Button';
+import ArrowAnimation from '../animations/ArrowAnimation';
+import Arrow from '../Arrow';
+import parseStringData from '../../utilities/parseStringData';
 import {
   addMessage,
   removeMessage,
@@ -24,8 +24,8 @@ import {
   changeTextareaMessage,
   clearMessages,
   useAddResponseMutation,
-} from '../store';
-import useChat from '../hooks/useChat';
+} from '../../store';
+import useChat from '../../hooks/useChat';
 
 const PlaygroundLayout = () => {
   const codeRef = useRef(null);
