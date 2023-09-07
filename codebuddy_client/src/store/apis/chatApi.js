@@ -4,7 +4,7 @@ import types from '../../utilities/types';
 const chatApi = createApi({
   reducerPath: 'chat',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000',
+    baseUrl: '/',
   }),
   endpoints(builder) {
     const createChatEndpoint = (path) => {
