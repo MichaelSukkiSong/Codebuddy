@@ -19,11 +19,13 @@ const Navbar = ({ currentUser }) => {
               Playground
             </NavLink>
           </li>
-          <li className="nav__item">
-            <NavLink to="/mycode" className="nav__link">
-              My code
-            </NavLink>
-          </li>
+          {currentUser ? (
+            <li className="nav__item">
+              <NavLink to="/mycode" className="nav__link">
+                My code
+              </NavLink>
+            </li>
+          ) : null}
           <li className="nav__item">
             {currentUser ? (
               <form method="post" action="/api/logout">
