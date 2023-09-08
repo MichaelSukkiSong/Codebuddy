@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  overflow: scroll;
+  overflow-y: scroll;
 
   @include mixins.respond(phone) {
     display: block;

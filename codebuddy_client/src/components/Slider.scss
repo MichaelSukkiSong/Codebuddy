@@ -8,6 +8,7 @@
     align-items: center;
 
     &-name {
+      font-size: variables.$default-font-size-small-2;
     }
 
     &-input {
