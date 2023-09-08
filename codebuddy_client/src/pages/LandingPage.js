@@ -14,7 +14,7 @@ const LandingPage = () => {
       <div className="header">
         <div className="header__text">
           <h1 className="heading-primary">
-            CodeBuddy helps you with your code
+            Codebuddy helps you with your code
           </h1>
           <h2 className="heading-secondary">
             use AI powered code helper today
