@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import Footer from '../components/Footer';
 import aboutImage1 from '../images/photo-1684369175833-4b445ad6bfb5.jpg';
-import aboutImage1_1 from '../images/3fd76d777b1ae60a79ff62695db9f38f.jpeg';
-import aboutImage1_2 from '../images/premium_photo-1680608979589-e9349ed066d5.jpg';
 import aboutImage2 from '../images/data-center-network-3wz76kas9x1nwy42.jpeg';
-import aboutImage2_1 from '../images/Data Center.jpeg';
 
 const LandingPage = () => {
   return (
@@ -41,19 +38,10 @@ const LandingPage = () => {
                     'How could i make the code more efficient?',
                     'Show me a useful API that I can use to build a space related personal project',
                     'How do you write test code? ',
-                    `Change this code to an another language.
-
-                    class OpenAI {
-                      static getInstance() {
-                        return new OpenAI({
-                          apiKey: keys.openaiApiKey,
-                        });
-                      }
-                      `,
                   ],
                   autoStart: true,
                   loop: false,
-                  pauseFor: 4500,
+                  pauseFor: 5500,
                   deleteSpeed: 1,
                   delay: 10,
                 }}
@@ -70,8 +58,8 @@ const LandingPage = () => {
               <Typewriter
                 options={{
                   strings: [
-                    'To say `hello` in Python, you can use the `print` function with the string `Hello` inside parentheses...',
-                    'The syntax of the splice method is as follows...splice(start, deleteCount)...',
+                    'To say `hello` in Python, you can use the `print` function with the string `Hello` inside parentheses.',
+                    'In JavaScript, there is no built-in splice method for strings. However, there is a splice method for arrays. The splice method is used to modify an array by adding or removing elements from it.',
                     'There is a small typo in your code. Instead of `csonsole.log`, it should be `console.log`...',
                     `Here is one way to implement a stack using three queues in JavaScript:
 
@@ -82,17 +70,9 @@ class Stack {
     this.queue3 = [];
   }
 } ...`,
-                    '1. Use efficient data structures: Ensure you are using the appropriate data structures for your code...',
-                    'NASA API provides a range of space-related data that can be useful for your project...',
-                    'To write test code, you can use a testing framework/library like JUnit for Java or PyTest for Python...',
-                    `class OpenAI:
-    @staticmethod
-    def getInstance():
-        return OpenAI(keys.openaiApiKey)
-    
-    def __init__(self, config):
-        self.configuration = Configuration(config)
-        self.openai = OpenAIApi(self.configuration)`,
+                    '1. Use Proper Data Structures: Choose the right data structures for your specific needs. 2. Minimize DOM Manipulation: DOM manipulation is often a performance bottleneck. ',
+                    'Certainly! One exciting space-related API you can use for personal projects is the NASA API (Application Programming Interface). NASA provides a variety of APIs that allow you to access a wealth of space-related data and imagery.',
+                    '1. Choose a Testing Framework: Select a testing framework compatible with your programming language (e.g., Jest for JavaScript, pytest for Python). 2. Write Test Cases: 3. Run Your Tests',
                   ],
                   autoStart: true,
                   loop: false,
@@ -124,16 +104,6 @@ class Stack {
                   src={aboutImage1}
                   alt="about image1"
                 />
-                <img
-                  className="section__about--image-2"
-                  src={aboutImage1_1}
-                  alt="about image1_1"
-                />
-                <img
-                  className="section__about--image-3"
-                  src={aboutImage1_2}
-                  alt="about image1_2"
-                />
               </div>
             </div>
           </div>
@@ -144,11 +114,6 @@ class Stack {
                   src={aboutImage2}
                   alt="about image2"
                   className="section__about--image-1"
-                />
-                <img
-                  src={aboutImage2_1}
-                  alt="about image2_1"
-                  className="section__about--image-2"
                 />
               </div>
             </div>
