@@ -1,4 +1,6 @@
 import './Sidebar.scss';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { TbBulb } from 'react-icons/tb';
@@ -10,9 +12,12 @@ import { BsLightningCharge } from 'react-icons/bs';
 import { BsGlobe } from 'react-icons/bs';
 import { GrTest } from 'react-icons/gr';
 import { TbArrowsExchange } from 'react-icons/tb';
+import { AiOutlinePlus } from 'react-icons/ai';
 import { clearMessagesExceptOne } from '../store';
+import Modal from './Modal';
 
 const Sidebar = () => {
+  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
   const handleSidebarClick = () => {
@@ -133,6 +138,19 @@ const Sidebar = () => {
           </NavLink>
         </li>
       </ul>
+      <div className="sidebar__btn">
+        <button onClick={() => setShowModal(true)}>
+          <div className="plus-icon">
+            <AiOutlinePlus />
+          </div>
+          <span>Create Category</span>
+        </button>
+        {showModal &&
+          createPortal(
+            <Modal onClose={() => setShowModal(false)} />,
+            document.body
+          )}
+      </div>
     </div>
   );
 };
