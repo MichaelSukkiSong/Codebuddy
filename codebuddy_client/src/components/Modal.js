@@ -1,8 +1,14 @@
+import './Modal.scss';
+
 const Modal = ({ onClose }) => {
   return (
-    <div>
-      <div>Modal</div>
-      <button onClick={onClose}>Close</button>
+    <div className="modal">
+      <div className="modal__content">
+        <div className="modal__content--form">Some form</div>
+        <div className="modal__content--btn">
+          <button onClick={onClose}>Close</button>
+        </div>
+      </div>
     </div>
   );
 };
