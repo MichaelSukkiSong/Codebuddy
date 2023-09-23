@@ -34,7 +34,6 @@ const LandingPage = () => {
                     'How do i say `hello` in Python?',
                     'How does the splice method work in javascript?',
                     `What is wrong with my code? csonsole.log('hello there');`,
-                    'How do you make a stack with 3 queues?',
                     'How could i make the code more efficient?',
                     'Show me a useful API that I can use to build a space related personal project',
                     'How do you write test code? ',
@@ -61,15 +60,6 @@ const LandingPage = () => {
                     'To say `hello` in Python, you can use the `print` function with the string `Hello` inside parentheses.',
                     'In JavaScript, there is no built-in splice method for strings. However, there is a splice method for arrays. The splice method is used to modify an array by adding or removing elements from it.',
                     'There is a small typo in your code. Instead of `csonsole.log`, it should be `console.log`...',
-                    `Here is one way to implement a stack using three queues in JavaScript:
-
-class Stack {
-  constructor() {
-    this.queue1 = [];
-    this.queue2 = [];
-    this.queue3 = [];
-  }
-} ...`,
                     '1. Use Proper Data Structures: Choose the right data structures for your specific needs. 2. Minimize DOM Manipulation: DOM manipulation is often a performance bottleneck. ',
                     'Certainly! One exciting space-related API you can use for personal projects is the NASA API (Application Programming Interface). NASA provides a variety of APIs that allow you to access a wealth of space-related data and imagery.',
                     '1. Choose a Testing Framework: Select a testing framework compatible with your programming language (e.g., Jest for JavaScript, pytest for Python). 2. Write Test Cases: 3. Run Your Tests',
