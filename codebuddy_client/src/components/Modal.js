@@ -1,7 +1,8 @@
 import './Modal.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeName, changePrompt } from '../store';
+import { addCategory, removeCategory } from '../store';
+import { nanoid } from 'nanoid';
 
 const Modal = ({ onClose }) => {
   const [name, setName] = useState('');
@@ -9,8 +10,10 @@ const Modal = ({ onClose }) => {
   const dispatch = useDispatch();
 
   const handleCreateClick = () => {
-    dispatch(changeName(name));
-    dispatch(changePrompt(prompt));
+    const newCategory = { id: nanoid(), name: name, prompt: prompt };
+
+    dispatch(addCategory(newCategory));
+
     onClose();
   };
 

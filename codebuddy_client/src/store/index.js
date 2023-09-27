@@ -21,8 +21,8 @@ import {
 } from './slices/messagesSlice';
 import {
   categoriesReducer,
-  changeName,
-  changePrompt,
+  addCategory,
+  removeCategory,
 } from './slices/categoriesSlice';
 
 const store = configureStore({
@@ -76,6 +76,6 @@ export {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
-  changeName,
-  changePrompt,
+  addCategory,
+  removeCategory,
 };

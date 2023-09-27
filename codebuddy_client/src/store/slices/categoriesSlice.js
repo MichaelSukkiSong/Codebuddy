@@ -1,20 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState: {
-    name: '',
-    prompt: '',
+    categories: [],
   },
   reducers: {
-    changeName(state, action) {
-      state.name = action.payload;
+    addCategory(state, action) {
+      state.categories.push(action.payload);
     },
-    changePrompt(state, action) {
-      state.prompt = action.payload;
+    removeCategory(state, action) {
+      const removedCategories = state.categories.filter((category) => {
+        return category.id !== action.payload;
+      });
+      state.categories = removedCategories;
     },
   },
 });
 
-export const { changeName, changePrompt } = categoriesSlice.actions;
+export const { addCategory, removeCategory } = categoriesSlice.actions;
 export const categoriesReducer = categoriesSlice.reducer;
