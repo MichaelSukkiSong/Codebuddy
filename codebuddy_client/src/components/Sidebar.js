@@ -1,7 +1,7 @@
 import './Sidebar.scss';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { TbBulb } from 'react-icons/tb';
 import { BsSticky } from 'react-icons/bs';
@@ -19,9 +19,22 @@ import Modal from './Modal';
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
+  const categories = useSelector((state) => state.categories.categories);
 
   const handleSidebarClick = () => {
     dispatch(clearMessagesExceptOne());
+  };
+
+  const renderCategories = () => {
+    return categories.map((category) => {
+      return (
+        <div className="category__item" key={category.id}>
+          <NavLink className="category__link" to={`categories/${category.id}`}>
+            {category.name}
+          </NavLink>
+        </div>
+      );
+    });
   };
 
   return (
@@ -138,6 +151,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
       </ul>
+      <div className="category__list">{renderCategories()}</div>
       <div className="sidebar__btn">
         <button onClick={() => setShowModal(true)}>
           <div className="plus-icon">

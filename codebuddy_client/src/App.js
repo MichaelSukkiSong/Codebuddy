@@ -30,6 +30,7 @@ import MoreefficiencyPage from './pages/playground/MoreefficiencyPage';
 import UsefulinfoPage from './pages/playground/UsefulinfoPage';
 import ShowtestcodePage from './pages/playground/ShowtestcodePage';
 import ChangelanguagePage from './pages/playground/ChangelanguagePage';
+import CustomCategoryPage from './pages/playground/categories/CustomCategoryPage';
 import NotfoundPage from './pages/NotfoundPage';
 import Error from './components/Error';
 
@@ -86,6 +87,11 @@ const router = createBrowserRouter(
           <Route
             path="changelanguage"
             element={<ChangelanguagePage />}
+            errorElement={<Error />}
+          />
+          <Route
+            path="categories/:categoryId"
+            element={<CustomCategoryPage />}
             errorElement={<Error />}
           />
         </Route>

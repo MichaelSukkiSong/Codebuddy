@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
 
 const categoriesSlice = createSlice({
   name: 'categories',

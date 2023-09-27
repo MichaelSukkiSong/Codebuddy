@@ -81,3 +81,25 @@
     }
   }
 }
+
+.category {
+  &__list {
+    width: 100%;
+    box-shadow: 2px 2px 4px variables.$color-gray-4;
+    border-radius: 10px;
+  }
+
+  &__item {
+    margin: 1rem 0;
+
+    font-size: variables.$default-font-size-small-2;
+    color: variables.$color-gray-8;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+
+  &__link {
+  }
+}
