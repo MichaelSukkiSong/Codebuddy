@@ -19,6 +19,11 @@ import {
   clearMessage,
   clearAll,
 } from './slices/messagesSlice';
+import {
+  categoriesReducer,
+  changeName,
+  changePrompt,
+} from './slices/categoriesSlice';
 
 const store = configureStore({
   reducer: {
@@ -26,6 +31,7 @@ const store = configureStore({
     messages: messagesReducer,
     [chatApi.reducerPath]: chatApi.reducer,
     [responsesApi.reducerPath]: responsesApi.reducer,
+    categories: categoriesReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()
@@ -70,4 +76,6 @@ export {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
+  changeName,
+  changePrompt,
 };
