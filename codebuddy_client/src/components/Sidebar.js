@@ -28,11 +28,11 @@ const Sidebar = () => {
   const renderCategories = () => {
     return categories.map((category) => {
       return (
-        <div className="category__item" key={category.id}>
+        <li className="category__item" key={category.id}>
           <NavLink className="category__link" to={`categories/${category.id}`}>
-            {category.name}
+            <span>{category.name}</span>
           </NavLink>
-        </div>
+        </li>
       );
     });
   };
@@ -151,13 +151,13 @@ const Sidebar = () => {
           </NavLink>
         </li>
       </ul>
-      <div className="category__list">{renderCategories()}</div>
+      <ul className="category__list">{renderCategories()}</ul>
       <div className="sidebar__btn">
         <button onClick={() => setShowModal(true)}>
           <div className="plus-icon">
             <AiOutlinePlus />
           </div>
-          <span>Create Category</span>
+          <span>Create Custom Category</span>
         </button>
         {showModal &&
           createPortal(
