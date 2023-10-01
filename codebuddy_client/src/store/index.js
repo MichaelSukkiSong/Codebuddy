@@ -18,12 +18,14 @@ import {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
-} from './slices/messagesSlice';
-import {
-  categoriesReducer,
   addCategory,
   removeCategory,
-} from './slices/categoriesSlice';
+} from './slices/messagesSlice';
+// import {
+//   categoriesReducer,
+//   addCategory,
+//   removeCategory,
+// } from './slices/categoriesSlice';
 
 const store = configureStore({
   reducer: {
@@ -31,7 +33,7 @@ const store = configureStore({
     messages: messagesReducer,
     [chatApi.reducerPath]: chatApi.reducer,
     [responsesApi.reducerPath]: responsesApi.reducer,
-    categories: categoriesReducer,
+    // categories: categoriesReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()
@@ -54,6 +56,7 @@ export {
   useSendChatUsefulInfoMutation,
   useSendChatShowTestCodeMutation,
   useSendChatChangeLanguageMutation,
+  useSendChatCustomMutation,
 } from './apis/chatApi';
 export {
   useFetchResponsesQuery,

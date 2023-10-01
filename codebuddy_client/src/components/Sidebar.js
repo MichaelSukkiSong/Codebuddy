@@ -19,7 +19,7 @@ import Modal from './Modal';
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categories.categories);
+  const categories = useSelector((state) => state.messages.categories);
 
   const handleSidebarClick = () => {
     dispatch(clearMessagesExceptOne());

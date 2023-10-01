@@ -8,6 +8,7 @@ const types = {
   usefulinfo: 'usefulinfo',
   showtestcode: 'showtestcode',
   changelanguage: 'changelanguage',
+  custom: 'custom',
 };
 
 export default types;

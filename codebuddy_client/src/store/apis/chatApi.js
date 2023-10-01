@@ -35,6 +35,7 @@ const chatApi = createApi({
       sendChatUsefulInfo: createChatEndpoint(types.usefulinfo),
       sendChatShowTestCode: createChatEndpoint(types.showtestcode),
       sendChatChangeLanguage: createChatEndpoint(types.changelanguage),
+      sendChatCustom: createChatEndpoint(types.custom),
     };
   },
 });
@@ -49,5 +50,6 @@ export const {
   useSendChatUsefulInfoMutation,
   useSendChatShowTestCodeMutation,
   useSendChatChangeLanguageMutation,
+  useSendChatCustomMutation,
 } = chatApi;
 export { chatApi };

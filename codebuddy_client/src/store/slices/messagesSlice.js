@@ -10,6 +10,7 @@ const messagesSlice = createSlice({
     messages: [{ id: nanoid(), type: 'TEXT', message: '' }],
     changedlanguage: '',
     searchby: '',
+    categories: [],
   },
   reducers: {
     changeLanguage(state, action) {
@@ -70,6 +71,15 @@ const messagesSlice = createSlice({
       state.framework = '';
       state.temperature = 1;
     },
+    addCategory(state, action) {
+      state.categories.push(action.payload);
+    },
+    removeCategory(state, action) {
+      const removedCategories = state.categories.filter((category) => {
+        return category.id !== action.payload;
+      });
+      state.categories = removedCategories;
+    },
   },
 });
 
@@ -87,5 +97,7 @@ export const {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
+  addCategory,
+  removeCategory,
 } = messagesSlice.actions;
 export const messagesReducer = messagesSlice.reducer;

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const CustomCategoryPage = () => {
   let { categoryId } = useParams();
 
-  const categories = useSelector((state) => state.categories.categories);
+  const categories = useSelector((state) => state.messages.categories);
   const filteredCategories = categories.filter(
     (category) => category.id === categoryId
   );

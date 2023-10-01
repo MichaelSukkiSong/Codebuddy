@@ -8,6 +8,7 @@ import {
   useSendChatUsefulInfoMutation,
   useSendChatShowTestCodeMutation,
   useSendChatChangeLanguageMutation,
+  useSendChatCustomMutation,
 } from '../store';
 
 export default function useChat(pathStr) {
@@ -28,6 +29,8 @@ export default function useChat(pathStr) {
       return useSendChatShowTestCodeMutation;
     case 'changelanguage':
       return useSendChatChangeLanguageMutation;
+    case 'custom':
+      return useSendChatCustomMutation;
     default:
       return useSendChatHelpImplementationMutation;
   }
