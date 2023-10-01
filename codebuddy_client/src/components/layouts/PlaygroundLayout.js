@@ -26,6 +26,7 @@ import {
   useAddResponseMutation,
 } from '../../store';
 import useChat from '../../hooks/useChat';
+import { extractStringFromURL } from '../../utilities/extractStringFromURL';
 
 const PlaygroundLayout = () => {
   const codeRef = useRef(null);
@@ -38,8 +39,10 @@ const PlaygroundLayout = () => {
   const [sidebarWidth, setSidebarWidth] = useState(300);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const pathname = useOutlet().props.children.props.match?.pathnameBase;
-  const pathStr = pathname?.match(/\/([^/]+)$/)[1];
+  const pathname = useOutlet().props.children.props.location.pathname;
+
+  const pathStr = extractStringFromURL(pathname);
+
   const { currentUser, error, isFetching } = useOutletContext();
   const [sendChat, { isError, isLoading, data }] = useChat(pathStr)();
   const [addResponse, results] = useAddResponseMutation();
