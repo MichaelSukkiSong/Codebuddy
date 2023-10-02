@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCategory, removeCategory } from '../store';
 import { nanoid } from 'nanoid';
+import { useNavigate } from 'react-router-dom';
 
 const Modal = ({ onClose }) => {
   const [name, setName] = useState('');
   const [prompt, setPrompt] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleCreateClick = () => {
     const newCategory = { id: nanoid(), name: name, prompt: prompt };
@@ -15,6 +17,7 @@ const Modal = ({ onClose }) => {
     dispatch(addCategory(newCategory));
 
     onClose();
+    navigate(`/playground/categories/${newCategory.id}`);
   };
 
   return (

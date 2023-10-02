@@ -20,4 +20,9 @@
     padding: 1rem;
     overflow-y: auto;
   }
+
+  &__errormsg {
+    padding: 10px;
+    font-size: variables.$default-font-size-small-1;
+  }
 }

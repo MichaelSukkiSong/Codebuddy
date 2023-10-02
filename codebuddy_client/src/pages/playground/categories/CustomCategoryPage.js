@@ -11,6 +11,14 @@ const CustomCategoryPage = () => {
   );
   const category = filteredCategories[0];
 
+  if (!category) {
+    return (
+      <div className="CustomCategoryPage__errormsg">
+        Sorry, no category was found. Please try to make a fresh new category.
+      </div>
+    );
+  }
+
   return (
     <div className="CustomCategoryPage">
       <div className="CustomCategoryPage__title">Prompt</div>
