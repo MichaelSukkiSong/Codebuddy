@@ -5,7 +5,9 @@ exports.parsedMessages = (
   language,
   framework,
   messages,
-  changedlanguage
+  changedlanguage,
+  categories,
+  categoryId
 ) => {
   // messages=[{type:'TEXT',message:'' }, {type: 'CODE',message:'' }]
   const parsedMessages = messages
@@ -28,11 +30,17 @@ exports.parsedMessages = (
 
   const generatedMessage = genMessage(section, changedlanguage);
 
+  const categoryMessage = categories.filter(
+    (category) => category.id === categoryId
+  )[0].prompt;
+
   return `
   ${language ? `I am using ${language} as my programming language` : ''}
   ${framework ? `I am using ${framework} as my framework` : ''}
   
   ${generatedMessage}.
+
+  ${categoryMessage}.
 
   ${parsedMessages}
 
@@ -73,6 +81,9 @@ const genMessage = (section, changedlanguage) => {
       break;
     case types.changelanguage:
       return `I want you to convert/change the code in to a another language. I want it to be converted to ${changedlanguage} The code is as follows.`;
+      break;
+    case types.custom:
+      return '';
       break;
   }
 };

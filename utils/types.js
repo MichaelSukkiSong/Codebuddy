@@ -8,4 +8,5 @@ module.exports = {
   usefulinfo: 'usefulinfo',
   showtestcode: 'showtestcode',
   changelanguage: 'changelanguage',
+  custom: 'custom',
 };

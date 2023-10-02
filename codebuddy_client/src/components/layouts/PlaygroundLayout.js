@@ -26,7 +26,7 @@ import {
   useAddResponseMutation,
 } from '../../store';
 import useChat from '../../hooks/useChat';
-import { extractStringFromURL } from '../../utilities/extractStringFromURL';
+import { extractObjectFromURL } from '../../utilities/extractObjectFromURL';
 
 const PlaygroundLayout = () => {
   const codeRef = useRef(null);
@@ -40,11 +40,11 @@ const PlaygroundLayout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const pathname = useOutlet().props.children.props.location.pathname;
-
-  const pathStr = extractStringFromURL(pathname);
+  const pathObj = extractObjectFromURL(pathname);
+  // console.log(pathObj);
 
   const { currentUser, error, isFetching } = useOutletContext();
-  const [sendChat, { isError, isLoading, data }] = useChat(pathStr)();
+  const [sendChat, { isError, isLoading, data }] = useChat(pathObj.name)();
   const [addResponse, results] = useAddResponseMutation();
 
   const messages = useSelector(({ messages }) => {
@@ -113,7 +113,7 @@ const PlaygroundLayout = () => {
   };
 
   const handleSubmitClick = () => {
-    sendChat(messages);
+    sendChat({ ...messages, categoryId: pathObj.categoryId });
   };
 
   const handleClearClick = () => {
@@ -126,6 +126,8 @@ const PlaygroundLayout = () => {
   };
 
   const onResetClick = () => {
+    navigate('/playground');
+
     window.location.reload();
   };
 

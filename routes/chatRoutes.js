@@ -3,8 +3,15 @@ const { parsedMessages } = require('../utils/parseMessage');
 
 module.exports = (app) => {
   app.post('/api/chat/completions/:section', async (req, res) => {
-    const { language, framework, messages, temperature, changedlanguage } =
-      req.body.messages;
+    const {
+      language,
+      framework,
+      messages,
+      temperature,
+      changedlanguage,
+      categories,
+      categoryId,
+    } = req.body.messages;
     const { section } = req.params;
 
     if (messages.length === 0) {
@@ -21,9 +28,11 @@ module.exports = (app) => {
       language,
       framework,
       messages,
-      changedlanguage
+      changedlanguage,
+      categories,
+      categoryId
     );
-    // console.log(message);
+    console.log(message);
 
     try {
       const chatCompletion = await openai.createChatCompletion(
