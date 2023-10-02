@@ -47,8 +47,8 @@ exports.parsedMessages = (
   Organize and divide your response in to two parts, the 'code' part and the 'text' part. 
   The 'code'part includes the actual code.
   The 'text' part includes text that explains the code.
-  The '==============================' string can only appear only one time in the whole response.
   Always start the response with the 'code' part, and then the string '==============================', and then the 'text' part. 
+  The '==============================' string can only appear only one time in the whole response.
   The '==============================' string should alway be included in the response.
   `;
 };

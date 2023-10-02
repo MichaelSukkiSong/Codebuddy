@@ -32,7 +32,7 @@ module.exports = (app) => {
       categories,
       categoryId
     );
-    console.log(message);
+    // console.log(message);
 
     try {
       const chatCompletion = await openai.createChatCompletion(
