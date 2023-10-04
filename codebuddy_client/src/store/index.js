@@ -3,6 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { authApi } from './apis/authApi';
 import { chatApi } from './apis/chatApi';
 import { responsesApi } from './apis/responsesApi';
+import { categoriesApi } from './apis/categoriesApi';
 import {
   messagesReducer,
   changeLanguage,
@@ -33,13 +34,15 @@ const store = configureStore({
     messages: messagesReducer,
     [chatApi.reducerPath]: chatApi.reducer,
     [responsesApi.reducerPath]: responsesApi.reducer,
+    [categoriesApi.reducerPath]: categoriesApi.reducer,
     // categories: categoriesReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()
       .concat(authApi.middleware)
       .concat(chatApi.middleware)
-      .concat(responsesApi.middleware);
+      .concat(responsesApi.middleware)
+      .concat(categoriesApi.middleware);
   },
 });
 
@@ -64,6 +67,11 @@ export {
   useAddResponseMutation,
   useRemoveResponseMutation,
 } from './apis/responsesApi';
+export {
+  useFetchCategoryQuery,
+  useAddCategoryMutation,
+  useRemoveCategoryMutation,
+} from './apis/categoriesApi';
 export {
   store,
   changeLanguage,
