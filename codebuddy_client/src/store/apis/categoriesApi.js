@@ -9,6 +9,9 @@ const categoriesApi = createApi({
   endpoints(builder) {
     return {
       removeCategory: builder.mutation({
+        invalidatesTags: (result, error, category) => {
+          return [{ type: 'Category', id: category._id }];
+        },
         query: (category) => {
           return {
             url: `/api/categories/${category.id}`,
@@ -17,6 +20,9 @@ const categoriesApi = createApi({
         },
       }),
       addCategory: builder.mutation({
+        invalidatesTags: () => {
+          return [{ type: 'AddCategory' }];
+        },
         query: ({ id, name, prompt }) => {
           return {
             url: '/api/categories',
@@ -29,7 +35,25 @@ const categoriesApi = createApi({
           };
         },
       }),
+      fetchCategories: builder.query({
+        providesTags: (result, error, arg) => {
+          const tags = result.map((category) => {
+            return { type: 'Category', id: category._id };
+          });
+          tags.push({ type: 'AddCategory' });
+          return tags;
+        },
+        query: () => {
+          return {
+            url: '/api/categories',
+            method: 'GET',
+          };
+        },
+      }),
       fetchCategory: builder.query({
+        providesTags: (result, error, category) => {
+          return [{ type: 'Category', id: category._id }];
+        },
         query: (categoryId) => {
           return {
             url: `/api/categories/${categoryId}`,
@@ -42,6 +66,7 @@ const categoriesApi = createApi({
 });
 
 export const {
+  useFetchCategoriesQuery,
   useFetchCategoryQuery,
   useAddCategoryMutation,
   useRemoveCategoryMutation,

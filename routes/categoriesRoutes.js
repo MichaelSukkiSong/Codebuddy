@@ -29,9 +29,9 @@ module.exports = (app) => {
     res.status(201).json(category);
   });
 
-  // app.delete('/api/categories/:id', async (req, res) => {
-  //   await Category.findByIdAndDelete(req.params.id);
+  app.delete('/api/categories/:id', async (req, res) => {
+    await Category.findOneAndDelete({ id: req.params.id });
 
-  //   res.status(204).json();
-  // });
+    res.status(204).json();
+  });
 };

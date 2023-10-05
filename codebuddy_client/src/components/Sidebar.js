@@ -13,19 +13,25 @@ import { BsGlobe } from 'react-icons/bs';
 import { GrTest } from 'react-icons/gr';
 import { TbArrowsExchange } from 'react-icons/tb';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { clearMessagesExceptOne } from '../store';
+import { clearMessagesExceptOne, useFetchCategoriesQuery } from '../store';
 import Modal from './Modal';
 
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.messages.categories);
+  // const categories = useSelector((state) => state.messages.categories);
+
+  const { data: categories, error, isFetching } = useFetchCategoriesQuery();
 
   const handleSidebarClick = () => {
     dispatch(clearMessagesExceptOne());
   };
 
   const renderCategories = () => {
+    if (!categories) {
+      return null;
+    }
+
     return categories.map((category) => {
       return (
         <li className="category__item" key={category.id}>

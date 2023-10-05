@@ -68,6 +68,7 @@ export {
   useRemoveResponseMutation,
 } from './apis/responsesApi';
 export {
+  useFetchCategoriesQuery,
   useFetchCategoryQuery,
   useAddCategoryMutation,
   useRemoveCategoryMutation,
