@@ -71,15 +71,6 @@ const messagesSlice = createSlice({
       state.framework = '';
       state.temperature = 1;
     },
-    addCategoryToStore(state, action) {
-      state.categories.push(action.payload);
-    },
-    removeCategoryFromStore(state, action) {
-      const removedCategories = state.categories.filter((category) => {
-        return category.id !== action.payload;
-      });
-      state.categories = removedCategories;
-    },
   },
 });
 
@@ -97,7 +88,5 @@ export const {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
-  addCategoryToStore,
-  removeCategoryFromStore,
 } = messagesSlice.actions;
 export const messagesReducer = messagesSlice.reducer;

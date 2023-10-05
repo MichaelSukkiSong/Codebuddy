@@ -5,6 +5,7 @@ import {
   useOutlet,
   useOutletContext,
   useNavigate,
+  useParams,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -24,6 +25,7 @@ import {
   changeTextareaMessage,
   clearMessages,
   useAddResponseMutation,
+  useFetchCategoriesQuery,
 } from '../../store';
 import useChat from '../../hooks/useChat';
 import { extractObjectFromURL } from '../../utilities/extractObjectFromURL';
@@ -41,11 +43,14 @@ const PlaygroundLayout = () => {
   const navigate = useNavigate();
   const pathname = useOutlet().props.children.props.location.pathname;
   const pathObj = extractObjectFromURL(pathname);
+  const { categoryId } = useParams();
   // console.log(pathObj);
+  // console.log(categoryId);
 
   const { currentUser, error, isFetching } = useOutletContext();
   const [sendChat, { isError, isLoading, data }] = useChat(pathObj.name)();
   const [addResponse, results] = useAddResponseMutation();
+  const { data: categories } = useFetchCategoriesQuery();
 
   const messages = useSelector(({ messages }) => {
     return messages;
@@ -113,7 +118,11 @@ const PlaygroundLayout = () => {
   };
 
   const handleSubmitClick = () => {
-    sendChat({ ...messages, categoryId: pathObj.categoryId });
+    sendChat({
+      ...messages,
+      categoryId: categoryId,
+      categories: categories,
+    });
   };
 
   const handleClearClick = () => {

@@ -12,6 +12,8 @@ module.exports = (app) => {
       categories,
       categoryId,
     } = req.body.messages;
+    // console.log(categories, categoryId);
+
     const { section } = req.params;
 
     if (messages.length === 0) {
@@ -32,7 +34,7 @@ module.exports = (app) => {
       categories,
       categoryId
     );
-    // console.log(message);
+    // console.log('message: ', message);
 
     try {
       const chatCompletion = await openai.createChatCompletion(

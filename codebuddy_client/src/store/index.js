@@ -19,8 +19,6 @@ import {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
-  addCategoryToStore,
-  removeCategoryFromStore,
 } from './slices/messagesSlice';
 // import {
 //   categoriesReducer,
@@ -88,6 +86,4 @@ export {
   clearMessagesExceptOne,
   clearMessage,
   clearAll,
-  addCategoryToStore,
-  removeCategoryFromStore,
 };
