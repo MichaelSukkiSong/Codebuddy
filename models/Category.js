@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const categoriesSchema = new Schema({
+const categorySchema = new Schema({
   id: String,
   name: String,
   prompt: String,
 });
 
-mongoose.model('categories', categoriesSchema);
+mongoose.model('categories', categorySchema);

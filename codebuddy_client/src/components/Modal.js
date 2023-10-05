@@ -1,7 +1,7 @@
 import './Modal.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCategory, removeCategory } from '../store';
+import { addCategoryToStore, useAddCategoryMutation } from '../store';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,11 +10,13 @@ const Modal = ({ onClose }) => {
   const [prompt, setPrompt] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [addCategory, results] = useAddCategoryMutation();
 
   const handleCreateClick = () => {
     const newCategory = { id: nanoid(), name: name, prompt: prompt };
 
-    dispatch(addCategory(newCategory));
+    dispatch(addCategoryToStore(newCategory));
+    addCategory(newCategory);
 
     onClose();
     navigate(`/playground/categories/${newCategory.id}`);

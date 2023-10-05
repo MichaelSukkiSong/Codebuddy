@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const categoriesApi = createApi({
   reducerPath: 'categories',
@@ -17,11 +17,15 @@ const categoriesApi = createApi({
         },
       }),
       addCategory: builder.mutation({
-        query: (arg) => {
+        query: ({ id, name, prompt }) => {
           return {
-            url: '/api/responses',
+            url: '/api/categories',
             method: 'POST',
-            body: {},
+            body: {
+              id,
+              name,
+              prompt,
+            },
           };
         },
       }),

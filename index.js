@@ -6,6 +6,7 @@ const cors = require('cors');
 const keys = require('./config/keys');
 require('./models/User');
 require('./models/Response');
+require('./models/Category');
 require('./services/passport');
 require('./services/openai');
 require('./middlewares/requireAuth');
@@ -42,6 +43,7 @@ require('./routes/chatRoutes')(app);
 // Protected Routes
 // app.use(requireAuth);
 require('./routes/responsesRoutes')(app);
+require('./routes/categoriesRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
