@@ -51,6 +51,7 @@ const PlaygroundLayout = () => {
   const [sendChat, { isError, isLoading, data }] = useChat(pathObj.name)();
   const [addResponse, results] = useAddResponseMutation();
   const { data: categories } = useFetchCategoriesQuery();
+  //TODO
 
   const messages = useSelector(({ messages }) => {
     return messages;
@@ -216,7 +217,7 @@ const PlaygroundLayout = () => {
       onMouseLeave={handleDragBarMouseLeave}
     >
       <div className="playground__sidebar" ref={sidebarRef}>
-        <Sidebar />
+        <Sidebar categories={categories} currentUser={currentUser} />
         <div
           className="playground__sidebar-dragbar"
           onMouseDown={handleDragBarMouseDown}

@@ -20,11 +20,6 @@ import {
   clearMessage,
   clearAll,
 } from './slices/messagesSlice';
-// import {
-//   categoriesReducer,
-//   addCategory,
-//   removeCategory,
-// } from './slices/categoriesSlice';
 
 const store = configureStore({
   reducer: {
@@ -33,7 +28,6 @@ const store = configureStore({
     [chatApi.reducerPath]: chatApi.reducer,
     [responsesApi.reducerPath]: responsesApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
-    // categories: categoriesReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()

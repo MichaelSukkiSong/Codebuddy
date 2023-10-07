@@ -10,7 +10,6 @@ const messagesSlice = createSlice({
     messages: [{ id: nanoid(), type: 'TEXT', message: '' }],
     changedlanguage: '',
     searchby: '',
-    categories: [],
   },
   reducers: {
     changeLanguage(state, action) {
