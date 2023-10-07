@@ -25,12 +25,12 @@ import {
   changeTextareaMessage,
   clearMessages,
   useAddResponseMutation,
-  useFetchCategoriesQuery,
 } from '../../store';
 import useChat from '../../hooks/useChat';
 import { extractObjectFromURL } from '../../utilities/extractObjectFromURL';
 
 const PlaygroundLayout = () => {
+  const [categories, setCategories] = useState([]);
   const codeRef = useRef(null);
   const textRef = useRef(null);
   const inputRef = useRef(null);
@@ -50,8 +50,6 @@ const PlaygroundLayout = () => {
   const { currentUser, error, isFetching } = useOutletContext();
   const [sendChat, { isError, isLoading, data }] = useChat(pathObj.name)();
   const [addResponse, results] = useAddResponseMutation();
-  const { data: categories } = useFetchCategoriesQuery();
-  //TODO
 
   const messages = useSelector(({ messages }) => {
     return messages;
@@ -217,7 +215,7 @@ const PlaygroundLayout = () => {
       onMouseLeave={handleDragBarMouseLeave}
     >
       <div className="playground__sidebar" ref={sidebarRef}>
-        <Sidebar categories={categories} currentUser={currentUser} />
+        <Sidebar currentUser={currentUser} setCategories={setCategories} />
         <div
           className="playground__sidebar-dragbar"
           onMouseDown={handleDragBarMouseDown}

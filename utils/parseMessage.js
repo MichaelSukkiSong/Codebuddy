@@ -30,17 +30,20 @@ exports.parsedMessages = (
 
   const generatedMessage = genMessage(section, changedlanguage);
 
-  const categoryMessage = categories.filter(
-    (category) => category.id === categoryId
-  )[0].prompt;
+  let categoryMessage;
+  if (categories) {
+    categoryMessage = categories.filter(
+      (category) => category.id === categoryId
+    )[0].prompt;
+  }
 
   return `
   ${language ? `I am using ${language} as my programming language` : ''}
   ${framework ? `I am using ${framework} as my framework` : ''}
   
-  ${generatedMessage}.
+  ${generatedMessage}
 
-  ${categoryMessage}.
+  ${categoryMessage || ''}
 
   ${parsedMessages}
 
