@@ -12,6 +12,7 @@ import { GrTest } from 'react-icons/gr';
 import { TbArrowsExchange } from 'react-icons/tb';
 import { clearMessagesExceptOne } from '../store';
 import CustomCategoryList from './CustomCategoryList';
+import FakeCreateCustomBtn from './FakeCreateCustomBtn';
 
 const Sidebar = ({ currentUser, setCategories }) => {
   const dispatch = useDispatch();
@@ -136,7 +137,9 @@ const Sidebar = ({ currentUser, setCategories }) => {
       </ul>
       {currentUser ? (
         <CustomCategoryList setCategories={setCategories} />
-      ) : null}
+      ) : (
+        <FakeCreateCustomBtn />
+      )}
     </div>
   );
 };
