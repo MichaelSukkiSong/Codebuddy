@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import { useFetchCategoriesQuery } from '../store';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { RxCrossCircled } from 'react-icons/rx';
 import Modal from './Modal';
 
 const CustomCategoryList = ({ setCategories }) => {
@@ -25,6 +26,9 @@ const CustomCategoryList = ({ setCategories }) => {
       <li className="category__item" key={category.id}>
         <NavLink className="category__link" to={`categories/${category.id}`}>
           <span>{category.name}</span>
+          <div className="category__del-btn">
+            <RxCrossCircled />
+          </div>
         </NavLink>
       </li>
     );
