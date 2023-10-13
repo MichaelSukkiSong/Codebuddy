@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useFetchCategoriesQuery, useRemoveCategoryMutation } from '../store';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { RxCrossCircled } from 'react-icons/rx';
@@ -10,6 +10,7 @@ const CustomCategoryList = ({ setCategories }) => {
   const [showModal, setShowModal] = useState(false);
   const { data: categories } = useFetchCategoriesQuery();
   const [removeCategory] = useRemoveCategoryMutation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setCategories(categories);
@@ -19,8 +20,9 @@ const CustomCategoryList = ({ setCategories }) => {
     return null;
   }
 
-  const handleCategoryDeleteClick = (category) => {
+  const handleCategoryDeleteClick = (event, category) => {
     removeCategory(category);
+    navigate('/playground');
   };
 
   const renderCategories = categories.map((category) => {
@@ -31,13 +33,13 @@ const CustomCategoryList = ({ setCategories }) => {
       <li className="category__item" key={category.id}>
         <NavLink className="category__link" to={`categories/${category.id}`}>
           <span>{category.name}</span>
-          <div
-            className="category__del-btn"
-            onClick={() => handleCategoryDeleteClick(category)}
-          >
-            <RxCrossCircled />
-          </div>
         </NavLink>
+        <div
+          className="category__del-btn"
+          onClick={(event) => handleCategoryDeleteClick(event, category)}
+        >
+          <RxCrossCircled />
+        </div>
       </li>
     );
   });

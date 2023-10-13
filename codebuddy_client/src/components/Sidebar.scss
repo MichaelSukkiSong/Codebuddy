@@ -92,28 +92,19 @@
     width: 100%;
     box-shadow: 2px 2px 4px variables.$color-gray-4;
     border-radius: 10px;
+    margin-bottom: 1rem;
   }
 
   &__item {
-    margin: 0.5rem 0;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid variables.$color-gray-2;
-    }
+    display: flex;
 
     &:hover {
       background-color: variables.$color-primary-0;
     }
-
-    & a.active {
-      background-color: variables.$color-primary-7;
-      border-radius: 5px;
-      color: variables.$color-white;
-      box-shadow: 3px 3px 8px variables.$color-gray-6;
-    }
   }
 
   &__link {
+    width: 90%;
     text-decoration: none;
     font-size: variables.$default-font-size-small-2;
     color: variables.$color-gray-8;
@@ -124,11 +115,15 @@
   }
 
   &__del-btn {
+    width: 10%;
     @include mixins.flexCenter;
     font-size: variables.$default-font-size-small-1;
 
-    &:hover {
+    & > svg {
       color: variables.$color-gray-5;
+      &:hover {
+        color: variables.$color-gray-8;
+      }
     }
   }
 }

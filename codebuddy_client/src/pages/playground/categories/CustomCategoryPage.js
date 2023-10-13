@@ -21,7 +21,8 @@ const CustomCategoryPage = () => {
   if (!category) {
     return (
       <div className="CustomCategoryPage__errormsg">
-        Sorry, no category was found. Please make a fresh new category.
+        Sorry, no category prompt was found. Please press F5 to refresh and try
+        again.
       </div>
     );
   }
