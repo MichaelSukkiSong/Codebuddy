@@ -1,0 +1,106 @@
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.section__about {
+  padding: 10rem 20rem;
+
+  @include mixins.respond(tab-port) {
+    padding: 2.5rem 5rem;
+  }
+
+  &--header {
+    display: block;
+    text-align: center;
+    padding: 5rem 0;
+    font-size: variables.$default-font-size-6;
+    background: linear-gradient(
+      to right,
+      variables.$color-primary-2,
+      variables.$color-primary-8,
+      variables.$color-primary-1,
+      variables.$color-primary-6
+    );
+    // color: transparent;
+    color: rgba(0, 0, 0, 0.1);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  &--part {
+    height: 50rem;
+    width: 100%;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px variables.$color-gray-3;
+
+    @include mixins.respond(phone) {
+      display: inline-block;
+    }
+
+    &-text {
+      width: 100%;
+      height: 100%;
+      @include mixins.flexCenter;
+      border-radius: 5px;
+      padding: 4rem 8rem;
+
+      @include mixins.respond(tab-port) {
+        padding: 2rem 4rem;
+      }
+    }
+    &-image {
+      width: 100%;
+      height: 100%;
+      @include mixins.flexCenter;
+      border-radius: 5px;
+
+      @include mixins.respond(phone) {
+        display: none;
+      }
+    }
+  }
+
+  &--text {
+    font-size: variables.$default-font-size;
+    padding: 40px;
+    color: variables.$color-gray-6;
+
+    @include mixins.respond(tab-land) {
+      padding: 0;
+    }
+
+    & > h2 {
+      font-size: variables.$default-font-size-3;
+      color: variables.$color-gray-7;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &--image {
+    @include mixins.flexCenter;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // background-color: antiquewhite;
+
+    & > img {
+      width: 65%;
+      height: 45%;
+      outline: 1rem solid variables.$color-primary-0;
+      outline-offset: 1.5rem;
+      border-radius: 5px;
+    }
+
+    &-1 {
+      z-index: 10;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
