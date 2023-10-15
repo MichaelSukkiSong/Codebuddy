@@ -8,8 +8,8 @@ const LandingPage = () => {
   return (
     <>
       <Header />
+      <SectionAccordion />
       <SectionAbout />
-      {/* <SectionAccordion /> */}
       <Footer />
     </>
   );
