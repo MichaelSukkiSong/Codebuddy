@@ -1,14 +1,5 @@
 import './SectionAccordion.scss';
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-  Image,
-} from '@chakra-ui/react';
-import aboutImage2 from '../../images/data-center-network-3wz76kas9x1nwy42.jpeg';
+import AccordionWrapper from '../AccordionWrapper';
 
 const AccordionItemArr = [
   {
@@ -43,37 +34,22 @@ const AccordionItemArr = [
 ];
 
 const SectionAccordion = () => {
-  const renderAccordionItems = AccordionItemArr.map((item) => {
-    return (
-      <AccordionItem>
-        {({ isExpanded }) => (
-          <>
-            <h2>
-              <AccordionButton _expanded={{ bg: 'tomato', color: 'white' }}>
-                <Box as="span" flex="1" textAlign="left">
-                  {item.title}
-                </Box>
-                {isExpanded ? <div>{item.content}</div> : null}
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <Image boxSize="20rem" src={aboutImage2} alt="temp" />
-            </AccordionPanel>
-          </>
-        )}
-      </AccordionItem>
-    );
-  });
-
   return (
     <section>
-      <div>Launch A Dedicated Blockchain for your Ecosystem</div>
-      <div>
-        Take the reins. Customize your chain based on your project’s unique
-        requirements.
+      <div className="section__accordion">
+        <div className="section__accordion--header">
+          <div className="section__accordion--header-main">
+            Launch A Dedicated Blockchain for your Ecosystem
+          </div>
+          <div className="section__accordion--header-sub">
+            Take the reins. Customize your chain based on your project’s unique
+            requirements.
+          </div>
+        </div>
+        <div className="section__accordion--content">
+          <AccordionWrapper AccordionItemArr={AccordionItemArr} />
+        </div>
       </div>
-      <Accordion>{renderAccordionItems}</Accordion>
     </section>
   );
 };

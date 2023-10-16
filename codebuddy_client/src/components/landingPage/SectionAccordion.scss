@@ -1,2 +1,39 @@
 @use '../../styles/variables';
 @use '../../styles/mixins';
+
+.section__accordion {
+  padding: 10rem 20rem;
+
+  &--header {
+    &-main {
+      display: block;
+      text-align: center;
+      padding: 5rem 0;
+      font-size: variables.$default-font-size-6;
+      font-weight: 700;
+      background: linear-gradient(
+        to right,
+        variables.$color-primary-2,
+        variables.$color-primary-8,
+        variables.$color-primary-1,
+        variables.$color-primary-6
+      );
+      // color: transparent;
+      color: rgba(0, 0, 0, 0.1);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    &-sub {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 0;
+      font-size: variables.$default-font-size-3;
+      color: variables.$color-primary-7;
+      font-weight: 700;
+    }
+  }
+
+  &--content {
+  }
+}
