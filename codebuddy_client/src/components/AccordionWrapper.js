@@ -5,9 +5,7 @@ import {
   AccordionButton,
   AccordionPanel,
   Box,
-  Image,
 } from '@chakra-ui/react';
-import aboutImage2 from '../images/data-center-network-3wz76kas9x1nwy42.jpeg';
 
 const AccordionWrapper = ({ AccordionItemArr }) => {
   const renderAccordionItems = AccordionItemArr.map((item) => {
@@ -45,12 +43,14 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
               }
             >
               <AccordionPanel className="accordion__panel" pb={4}>
-                {/* <Image
-                  className="accordion__img"
-                  boxSize="20rem"
-                  src={aboutImage2}
-                  alt="temp"
-                /> */}
+                <dotlottie-player
+                  src={item.lottieplayerSrc}
+                  background="transparent"
+                  speed="1"
+                  style={{ width: '50rem', height: '50rem' }}
+                  loop
+                  autoplay
+                ></dotlottie-player>
               </AccordionPanel>
             </div>
           </>
@@ -59,7 +59,11 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
     );
   });
 
-  return <Accordion className="accordion">{renderAccordionItems}</Accordion>;
+  return (
+    <Accordion className="accordion" defaultIndex={0}>
+      {renderAccordionItems}
+    </Accordion>
+  );
 };
 
 export default AccordionWrapper;
