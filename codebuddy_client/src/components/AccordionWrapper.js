@@ -12,7 +12,7 @@ import aboutImage2 from '../images/data-center-network-3wz76kas9x1nwy42.jpeg';
 const AccordionWrapper = ({ AccordionItemArr }) => {
   const renderAccordionItems = AccordionItemArr.map((item) => {
     return (
-      <AccordionItem className="accordion__item">
+      <AccordionItem className="accordion__item" key={item.title}>
         {({ isExpanded }) => (
           <>
             <AccordionButton
@@ -45,12 +45,12 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
               }
             >
               <AccordionPanel className="accordion__panel" pb={4}>
-                <Image
+                {/* <Image
                   className="accordion__img"
                   boxSize="20rem"
                   src={aboutImage2}
                   alt="temp"
-                />
+                /> */}
               </AccordionPanel>
             </div>
           </>
