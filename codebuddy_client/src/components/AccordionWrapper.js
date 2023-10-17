@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
   Box,
   Image,
 } from '@chakra-ui/react';
@@ -18,25 +17,33 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
           <>
             <AccordionButton
               className="accordion__btn"
-              _expanded={{
-                bg: 'tomato',
-                color: 'white',
-                // height: '15rem',
-              }}
+              _expanded={
+                {
+                  // bg: 'tomato',
+                  // color: 'white',
+                  // height: '15rem',
+                }
+              }
             >
-              <Box
-                className="accordion__title"
-                as="span"
-                flex="1"
-                textAlign="left"
-              >
-                {item.title}
-              </Box>
-              {isExpanded ? (
-                <div className="accordion__msg">{item.content}</div>
-              ) : null}
+              <div className="accordion__btn-box">
+                <Box
+                  className="accordion__title"
+                  as="span"
+                  flex="1"
+                  textAlign="left"
+                >
+                  {item.title}
+                </Box>
+                {isExpanded ? (
+                  <div className="accordion__msg">{item.content}</div>
+                ) : null}
+              </div>
             </AccordionButton>
-            <div className={isExpanded ? null : 'accordion__collapse'}>
+            <div
+              className={
+                isExpanded ? 'accordion__expanded' : 'accordion__collapse'
+              }
+            >
               <AccordionPanel className="accordion__panel" pb={4}>
                 <Image
                   className="accordion__img"

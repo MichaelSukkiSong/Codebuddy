@@ -3,33 +3,30 @@ import AccordionWrapper from '../AccordionWrapper';
 
 const AccordionItemArr = [
   {
-    title: 'Unprecedented Performance',
-    content: `Handle thousands of transactions per second, with
-  sub-second confirmation times.`,
+    title: 'Intelligent Code Suggestions',
+    content: `Codebuddy revolutionizes your coding process by harnessing OpenAI's powerful API, offering real-time, context-aware code suggestions that enhance your programming efficiency and accuracy.`,
   },
   {
-    title: 'Low, predictable fees',
+    title: 'Comprehensive Programming Resources',
     content:
-      'Process transactions at a fraction of the costs of other chains, and de-risk from gas spikes on other networks.',
+      'Access a vast library of tutorials, documentation, and community forums directly within Codebuddy. Stay updated with the latest programming trends and best practices, all in one place.',
   },
   {
-    title: 'Gas customizability',
-    content: `Allow users to pay for gas in your project's native token, or remove gas fees entirely.`,
+    title: 'User-Friendly Interface',
+    content: `Designed with intuitive navigation and simplicity in mind, Codebuddy provides a user-friendly interface suitable for programmers of all levels. No more steep learning curves – just seamless coding.`,
   },
   {
-    title: 'EVM Compatibility',
+    title: 'Tailored Customization',
     content:
-      'Deploy your existing Solidity smart contracts and use familiar tools for development.',
+      'Customize Codebuddy according to your coding preferences. From coding styles to preferred libraries, tailor the platform to match your unique requirements, ensuring a personalized coding experience.',
   },
   {
-    title: 'Interoperability',
-    content:
-      'Natively and trustlessly bridge assets between your Caldera chain and Ethereum, Polygon, or other chains.',
+    title: 'Responsive Design',
+    content: `Experience uninterrupted coding sessions across various devices and screen sizes. Codebuddy's responsive design guarantees a smooth, consistent user experience whether you're on a desktop, tablet, or smartphone.`,
   },
   {
-    title: 'Revenue generation',
-    content:
-      'Earn transaction fees, bridge fees, and MEV as revenue for your company or DAO.',
+    title: 'Seamless Integration with OpenAI',
+    content: `Codebuddy seamlessly integrates with OpenAI's API, empowering you with intelligent, AI-driven solutions. Enhance your coding abilities with smart suggestions, making your programming journey more productive and enjoyable.`,
   },
 ];
 
@@ -39,11 +36,10 @@ const SectionAccordion = () => {
       <div className="section__accordion">
         <div className="section__accordion--header">
           <div className="section__accordion--header-main">
-            Launch A Dedicated Blockchain for your Ecosystem
+            Your Gateway to Intelligent Programming Solutions
           </div>
           <div className="section__accordion--header-sub">
-            Take the reins. Customize your chain based on your project’s unique
-            requirements.
+            Empowering Coders with Cutting-Edge Features for Development
           </div>
         </div>
         <div className="section__accordion--content">
