@@ -45,9 +45,9 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
               <AccordionPanel className="accordion__panel" pb={4}>
                 <dotlottie-player
                   src={item.lottieplayerSrc}
-                  background="transparent"
+                  // background="transparent"
                   speed="1"
-                  style={{ width: '50rem', height: '50rem' }}
+                  style={{ width: '100%', height: '100%' }}
                   loop
                   autoplay
                 ></dotlottie-player>

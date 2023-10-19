@@ -10,6 +10,38 @@
     justify-content: center;
     border: none;
     height: 12rem;
+
+    &:nth-child(1) {
+      .accordion__expanded {
+        transform: translateY(15rem);
+      }
+    }
+    &:nth-child(2) {
+      .accordion__expanded {
+        transform: translateY(5rem);
+      }
+    }
+    &:nth-child(3) {
+      .accordion__expanded {
+        transform: translateY(-10rem);
+      }
+    }
+    &:nth-child(4) {
+      .accordion__expanded {
+        transform: translateY(-20rem);
+      }
+    }
+    &:nth-child(5) {
+      .accordion__expanded {
+        transform: translateY(-30rem);
+      }
+    }
+
+    &:last-child {
+      .accordion__expanded {
+        transform: translateY(-45rem);
+      }
+    }
   }
 
   &__btn {
