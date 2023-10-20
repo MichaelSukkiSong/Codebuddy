@@ -11,6 +11,10 @@
     border: none;
     height: 12rem;
 
+    @include mixins.respond(phone) {
+      display: block;
+    }
+
     &:nth-child(1) {
       .accordion__expanded {
         transform: translateY(15rem);
@@ -71,12 +75,20 @@
     color: variables.$color-primary-9;
     text-align: left;
     margin-bottom: 1rem;
+
+    @include mixins.respond(phone) {
+      font-size: variables.$default-font-size-small-4;
+    }
   }
 
   &__panel {
     // background-image: url('../images/data-center-network-3wz76kas9x1nwy42.jpeg');
     // background-size: cover;
     height: 40rem;
+
+    @include mixins.respond(phone) {
+      display: none;
+    }
   }
 
   &__img {

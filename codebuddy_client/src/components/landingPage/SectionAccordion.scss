@@ -4,6 +4,14 @@
 .section__accordion {
   padding: 10rem 20rem;
 
+  @include mixins.respond(tab-port) {
+    padding: 8rem 15rem;
+  }
+
+  @include mixins.respond(phone) {
+    padding: 6rem 10rem;
+  }
+
   &--header {
     &-main {
       display: block;
@@ -22,7 +30,16 @@
       color: rgba(0, 0, 0, 0.1);
       background-clip: text;
       -webkit-background-clip: text;
+
+      @include mixins.respond(tab-land) {
+        font-size: variables.$default-font-size-5;
+      }
+
+      @include mixins.respond(tab-port) {
+        font-size: variables.$default-font-size-3;
+      }
     }
+
     &-sub {
       display: flex;
       justify-content: center;
@@ -32,6 +49,14 @@
       color: variables.$color-primary-7;
       font-weight: 700;
       margin-bottom: 2rem;
+
+      @include mixins.respond(tab-land) {
+        font-size: variables.$default-font-size-2;
+      }
+
+      @include mixins.respond(tab-port) {
+        font-size: variables.$default-font-size-1;
+      }
     }
   }
 
