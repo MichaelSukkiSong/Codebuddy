@@ -110,6 +110,8 @@
           @include mixins.flexCenter;
 
           & > textarea {
+            border: 1px solid variables.$color-primary-6;
+            border-radius: 3px;
           }
         }
 
@@ -118,6 +120,8 @@
           @include mixins.flexCenter;
 
           & > textarea {
+            border: 1px solid variables.$color-primary-6;
+            border-radius: 3px;
           }
         }
       }

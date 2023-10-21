@@ -37,6 +37,8 @@
       height: 4rem;
       width: 52.5rem;
       padding-left: 5px;
+      border: 1px solid variables.$color-primary-6;
+      border-radius: 3px;
     }
   }
 
@@ -56,6 +58,8 @@
       height: 4rem;
       width: 20rem;
       padding-left: 5px;
+      border: 1px solid variables.$color-primary-6;
+      border-radius: 3px;
     }
   }
 
@@ -65,6 +69,8 @@
       height: 4rem;
       width: 20rem;
       padding-left: 5px;
+      border: 1px solid variables.$color-primary-6;
+      border-radius: 3px;
     }
   }
 
@@ -76,6 +82,8 @@
     & > textarea {
       height: 90%;
       width: 100%;
+      border: 1px solid variables.$color-primary-6;
+      border-radius: 3px;
     }
   }
 

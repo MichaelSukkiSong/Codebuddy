@@ -35,6 +35,8 @@
           height: 3.5rem;
           padding: 10px;
           outline: none;
+          border: 1px solid variables.$color-primary-6;
+          border-radius: 3px;
         }
       }
 
@@ -52,6 +54,8 @@
           resize: none;
           padding: 10px;
           outline: none;
+          border: 1px solid variables.$color-primary-6;
+          border-radius: 3px;
         }
       }
     }
