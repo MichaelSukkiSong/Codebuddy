@@ -16,6 +16,7 @@
 
   &__sidebar {
     width: 30rem;
+    margin-right: 5px;
     display: flex;
 
     @include mixins.respond(phone) {
@@ -71,6 +72,9 @@
       height: 75%;
       width: 100%;
       display: flex;
+      border: 0.01px solid variables.$color-gray-2;
+      border-radius: 5px;
+      margin-bottom: 2rem;
 
       @include mixins.respond(phone) {
         display: block;
@@ -193,6 +197,7 @@
 
     &:hover {
       background-color: variables.$color-gray-0;
+      border-radius: 5px;
       cursor: pointer;
     }
 
