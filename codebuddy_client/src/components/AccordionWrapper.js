@@ -15,13 +15,13 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
           <>
             <AccordionButton
               className="accordion__btn"
-              _expanded={
-                {
-                  // bg: 'tomato',
-                  // color: 'white',
-                  // height: '15rem',
-                }
-              }
+              _expanded={{
+                color: 'cyan.800',
+                borderBottom: '1px',
+              }}
+              _hover={{
+                backgroundColor: 'none',
+              }}
             >
               <div className="accordion__btn-box">
                 <Box
