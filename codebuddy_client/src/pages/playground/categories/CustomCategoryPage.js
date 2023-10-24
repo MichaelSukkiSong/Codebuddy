@@ -1,22 +1,18 @@
 import './CustomCategoryPage.scss';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { useFetchCategoryQuery } from '../../../store';
 
 const CustomCategoryPage = () => {
   let { categoryId } = useParams();
 
-  // const categories = useSelector((state) => state.messages.categories);
-  // const filteredCategories = categories.filter(
-  //   (category) => category.id === categoryId
-  // );
-  // const category = filteredCategories[0];
-
   const {
     data: category,
     isError,
     isLoading,
-  } = useFetchCategoryQuery(categoryId);
+  } = useFetchCategoryQuery(categoryId, {
+    pollingInterval: 3000,
+    refetchOnMountOrArgChange: true,
+  });
 
   if (!category) {
     return (
