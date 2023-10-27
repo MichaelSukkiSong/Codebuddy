@@ -30,7 +30,7 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
                   flex="1"
                   textAlign="left"
                 >
-                  {item.title}
+                  <u>{item.title}</u>
                 </Box>
                 {isExpanded ? (
                   <div className="accordion__msg">{item.content}</div>
