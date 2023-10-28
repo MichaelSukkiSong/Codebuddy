@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 
 const AccordionWrapper = ({ AccordionItemArr }) => {
-  const renderAccordionItems = AccordionItemArr.map((item) => {
+  const renderAccordionItems = AccordionItemArr.map((item, index) => {
     return (
       <AccordionItem className="accordion__item" key={item.title}>
         {({ isExpanded }) => (
@@ -30,7 +30,8 @@ const AccordionWrapper = ({ AccordionItemArr }) => {
                   flex="1"
                   textAlign="left"
                 >
-                  <u>{item.title}</u>
+                  <span>0{index + 1}</span>
+                  {item.title}
                 </Box>
                 {isExpanded ? (
                   <div className="accordion__msg">{item.content}</div>
