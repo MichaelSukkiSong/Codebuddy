@@ -34,12 +34,13 @@
   &__btn {
     &--gotopg {
       font-size: variables.$default-font-size-1;
+      font-weight: 700;
       padding: 15px 25px;
       border-radius: 3px;
       background: linear-gradient(
         to right,
-        variables.$color-primary-9,
-        variables.$color-primary-6
+        variables.$color-primary-6,
+        variables.$color-primary-4
       );
       border: none;
       color: variables.$color-gray-1;
