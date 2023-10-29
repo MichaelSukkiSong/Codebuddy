@@ -66,6 +66,18 @@
     font-weight: 400;
     margin-bottom: 1rem;
 
+    @include mixins.respond(tab-land) {
+      font-size: variables.$default-font-size;
+    }
+
+    @include mixins.respond(tab-port) {
+      font-size: variables.$default-font-size-small-1;
+    }
+
+    @include mixins.respond(phone) {
+      font-size: variables.$default-font-size-small-2;
+    }
+
     & > span {
       margin-right: 1rem;
       color: variables.$color-primary-7;
@@ -81,8 +93,14 @@
     text-align: left;
     margin-bottom: 1rem;
 
+    @include mixins.respond(tab-land) {
+      font-size: variables.$default-font-size-small-1;
+    }
+    @include mixins.respond(tab-port) {
+      font-size: variables.$default-font-size-small-2;
+    }
     @include mixins.respond(phone) {
-      font-size: variables.$default-font-size-small-4;
+      font-size: variables.$default-font-size-small-2;
     }
   }
 

@@ -80,6 +80,10 @@
   padding: 0 5rem;
   @include mixins.flexCenter;
 
+  @include mixins.respond(phone) {
+    padding: 0 0rem;
+  }
+
   &__box {
     width: 35rem;
     height: 20rem;
