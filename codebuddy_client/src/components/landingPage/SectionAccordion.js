@@ -36,7 +36,7 @@ const AccordionItemArr = [
   },
   {
     title: 'Seamless Integration with OpenAI',
-    content: `Codebuddy seamlessly integrates with OpenAI's API, empowering you with intelligent, AI-driven solutions. Enhance your coding abilities with smart suggestions, making your programming journey more productive and enjoyable.`,
+    content: `Codebuddy seamlessly integrates with OpenAI's API, empowering you with intelligent, AI-driven solutions. Enhance your coding abilities with smart suggestions, making your programming journey more enjoyable.`,
     lottieplayerSrc:
       'https://lottie.host/da4e2662-2aa8-4ded-9dbf-9b6e0c359f07/S6dN7bFKuf.json',
   },

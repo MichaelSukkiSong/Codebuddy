@@ -79,18 +79,19 @@
 
   &__snsbox {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__snslist {
     list-style: none;
-    justify-content: flex-start;
     display: flex;
   }
 
   &__snsitem {
-    margin-top: 1rem;
-    margin-right: 2rem;
     background-color: white;
+    margin: 0 0.5rem;
+
     width: 45px;
     height: 45px;
     border-radius: 100%;
